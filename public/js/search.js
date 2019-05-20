@@ -20,7 +20,7 @@ $( document ).ready(function() {
             error: function(errorMessage){alert("Error");}
         }).then(function(response){
             console.log(response)
-            $('#wikitext').append(response[2])
+            $('#newtext').append(response[2])
         });
     });
   });
