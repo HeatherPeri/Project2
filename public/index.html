@@ -17,6 +17,8 @@
 </head>
 
 <body>
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=184321282484232&autoLogAppEvents=1"></script>
     
     
 
@@ -38,7 +40,8 @@
       <nav class="navbar">
           <a class="navbar-brand" href="#">Navbar</a>
           <a href="#" class="btn btn-sm animated-button sandy-one">Sign up</a>
-          <a href="#" class="btn btn-sm animated-button sandy-two">Login</a>
+          <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
+          <!-- <a href="#" class="btn btn-sm animated-button sandy-two">Login</a> -->
           <div class="input-group flex-nowrap">
               <div class="input-group-prepend">
                 <span class="input-group-text" id="addon-wrapping"><img src="./styles/images2/magnifier.png"></span>
