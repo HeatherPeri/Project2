@@ -4,7 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Monoton" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" type="text/css" href="./styles/styles.css">
   <link rel="stylesheet" type="text/css" href="./styles/style.css">
 
@@ -12,13 +14,11 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="./js/index.js"></script>
   <script src="./js/animation.js"></script>
+  <script src="./js/search.js"></script>
 </head>
 
 <body>
-    
-    
-
-    <a href="#" class="hero-btn">
+    <!--<a href="#" class="hero-btn">
         SEE<br>THE<br><span class="str">STARS</span>
       </a>
       <h2 id="introText">Lorem Ipsum is simply dummy text</h2>
@@ -27,18 +27,39 @@
       <a id="profile-hook" href="https://codepen.io/johnchinjew">
         <span>Made by </span>
         <img id="intro_img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/256705/profile/profile-80_73.jpg">
-      </a>
-      
-  <div class="container">
-      <div id="home">
-          <div class="bg1">
+      </a>-->
       <nav class="navbar">
           <a class="navbar-brand" href="#">Navbar</a>
           <a href="#" class="btn btn-sm animated-button sandy-one">Sign up</a>
           <a href="#" class="btn btn-sm animated-button sandy-two">Login</a>
         </nav>
-   </div>
-   <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<div class="container">
+     
+    <div class="row">
+        <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping"><img src="./styles/images2/magnifier.png"></span>
+            </div>
+            <input type="text" class="form-control" placeholder="Search" aria-label="Username" aria-describedby="addon-wrapping">
+          </div>
+
+
+      </div>
+  </div>
+  <div class="container">
+      <div class="row">
+        <div id="textField">
+                  <p id="wikitext">Some Text</p>
+                  </div>
+                </div>
+  
+   
+                </div>
+              
+            
+   
+ 
+   
 </body>
 
 </html>
