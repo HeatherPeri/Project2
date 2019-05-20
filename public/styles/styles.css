@@ -85,8 +85,15 @@ section {
   justify-content: center;
   align-items: center;
 }
-
-
+.block1 {
+  margin-left: 20px;
+}
+.middle {
+  color: aqua;
+}
+.block2 {
+  margin-right: 20px;
+}
 
 /*STARS ANIMATION*/
 
