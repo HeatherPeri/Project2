@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Astriod Data</title>
+</head>
+
+<body>
+  <!-- Retrieved data will be dumped here -->
+  <div class="name"></div>
+  <div class="diameter"></div>
+  <div class="hazardous"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script type="text/javascript">
+    // This is our API key
+    var APIKey = "tU5b8sHWxkaUKBCfnutInU98czA1N8BZGKVDH9bz";
+
+    // Here we are building the URL we need to query the database
+    var queryURL = " https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=" + APIKey;
+
+
+
+    // Here we run our AJAX call to the  API
+    $.ajax({
+      url: queryURL,
+      method: "GET"
+    })
+      // We store all of the retrieved data inside of an object called "response"
+      .then(function(response) {
+
+        // Log the queryURL
+        console.log(queryURL);
+
+        // Log the resulting object
+        console.log(response);
+
+        for (i = 0; i < response.length; i++) { 
+         $(".name").append("Name:" + response.name);
+        $(".diameter").text("Wind Speed: " + response.estimated_diameter.feet);
+        $(".hazardous").text("Humidity: " + response.is_potentially_hazardous_asteroid);
+
+}
+
+    //     // Transfer content to HTML
+    //     $(".name").text("Name:" + response.name);
+    //     $(".diameter").text("Wind Speed: " + response.estimated_diameter.feet);
+    //     $(".hazardous").text("Humidity: " + response.is_potentially_hazardous_asteroid);
+
+    //     // Log the data in the console as well
+    //     console.log("Name: " + response.name);
+    //     console.log("Diameter: " + response.estimated_diameter.feet);
+    //     console.log("Hazardous: " + response.is_potentially_hazardous_asteroid);
+      });
+  </script>
+</body>
+
+</html>
