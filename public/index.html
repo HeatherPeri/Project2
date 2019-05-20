@@ -12,6 +12,8 @@
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="./js/index.js"></script>
   <script src="./js/animation.js"></script>
+  <script src="./js/search.js"></script>
+
 </head>
 
 <body>
@@ -29,14 +31,27 @@
         <img id="intro_img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/256705/profile/profile-80_73.jpg">
       </a>
       
-  <div class="container">
+  
       <div id="home">
           <div class="bg1">
+              <div class="container">
       <nav class="navbar">
           <a class="navbar-brand" href="#">Navbar</a>
           <a href="#" class="btn btn-sm animated-button sandy-one">Sign up</a>
           <a href="#" class="btn btn-sm animated-button sandy-two">Login</a>
+          <div class="input-group flex-nowrap">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="addon-wrapping"><img src="./styles/images2/magnifier.png"></span>
+              </div>
+              <input type="text" class="form-control" placeholder="Search" aria-label="Username" aria-describedby="addon-wrapping">
+            </div>
         </nav>
+       <div class="row" id="firstRow">
+       <p id="newtext">some text</p>
+       
+       </div>
+        </div>
+        </div>
    </div>
    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
