@@ -108,3 +108,4 @@ var handleDeleteBtnClick = function() {
     refreshExamples();
   });
 };
+//STAR ANIMATION

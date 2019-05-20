@@ -3,5 +3,179 @@
 }
 
 body{
-  background-image: url("../../images/astronomy-beautiful-constellations-813269.jpg")
+ 
+  background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+#home{
+  width:100%;
+  height: 100%;
+ background:url(http://pixelglimpse.designova.net/wp_redrice/images/hero.png);
+  animation:animateBackground 120s infinite;
+  -webkit-animation:animateBackground 120s infinite;
+}
+.bg1{
+  display:flex;
+  display:-webkit-flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  width: 100vw;
+  height: 100vh;
+  background-image:-webkit-linear-gradient(left bottom, rgba(30, 31, 58, 0.8),rgba(12, 23, 97, 0.8));
+}
+article{
+  color:#fff;
+  font-family:Arial;
+}
+h1,h4,p{font-weight:normal;line-height:1.2}
+h4{text-transform:uppercase;}
+h1{margin:10px 0 20px}
+@keyframes animateBackground{
+  0%{background-position:0, 0}
+  50%{background-position:100% 0}
+  100%{background-position:0, 0}
+}
+@-webkit-keyframes animateBackground{
+  0%{background-position:0, 0}
+  50%{background-position:100% 0}
+  100%{background-position:0, 0}
+}
+#introText{
+  z-index: 1;
+  font-size: 80px;
+    width: 400px;
+}
+.navbar{
+  
+  height: 80px;
+    top: -360px;
+    width: 100%;
+    background: #fefdffad;
+
+}
+#introText{
+  z-index: 1;
+}
+.container{
+  width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+@media (min-width: 1200px){
+ .container {
+    max-width: 100%;
+
+ }
+}
+:root {
+  --palette1: #112BA4;
+  --palette2: #0A549C;
+  --palette3: #00928D;
+  --palette4: #F18F00;
+}
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/*STARS ANIMATION*/
+
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
+html,
+body {
+  height: 100vh;
+  background-color: #000;
+  overflow: hidden;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.bg {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: #000 url(https://images.unsplash.com/photo-1421930535025-d2af27c14065?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&s=0504e939e787f3307ebd9fb74c366d84) no-repeat center center;
+  background-size: cover;
+  filter: brightness(45%) blur(10px);
+  transition: filter 1.5s;
+}
+
+.hero-btn {
+  border: 2px solid white;
+  padding: 25px;
+  letter-spacing: 0.75em;
+  color: white;
+  z-index: 999;
+  margin: 25px;
+  line-height: 1.5;
+  transition: all 2s, padding 700ms;
+}
+
+.hero-btn:hover + div {
+  filter: brightness(100%);
+}
+
+.hero-btn:hover {
+  background-color: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.3);
+  padding: 15em
+}
+
+.str {
+  transition: 1s 1s
+}
+
+.hero-btn:hover .str {
+  color: red
+}
+#profile-hook {
+  color: #fff;
+  display: block;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: .5em 1em;
+  margin: 1%;
+  opacity: 0.5;
+  transition: opacity 500ms;
+  font-size: 16px;
+  text-decoration: none;
+}
+
+#profile-hook span {
+  vertical-align: middle
+}
+
+#profile-hook img {
+  width: 35px;
+  border-radius: 100%;
+  border: 1px solid white;
+  vertical-align: middle;
+  margin-left: 3px
+}
+
+#profile-hook:hover {
+  opacity: 1;
+}
+/*navbar buttons*/
