@@ -27,20 +27,18 @@ $.ajax({
 }
 });*/
 
-$(".input-group-text").click(function(){
+
 
     //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
-    $(".input-group-text").click(function(){
+    $(".btn-outline-success").click(function(){
 
         var searchTerm = $(".form-control").val();// value entered by the user
         //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
-        var url = 'https://genelab-data.ndc.nasa.gov/genelab/data/search?term='+searchTerm+ '&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'; // url to look for using the search input by the user
+        var url = 'https://genelab-data.ndc.nasa.gov/genelab/data/search?term=space&from=0&type=cgene,nih_geo_gse&ffield=links&fvalue=GPL16417&ffield=Data Source Accession&fvalue=GSE82255&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'; // url to look for using the search input by the user
     
         $.ajax({
             type:"GET",
             url:url,
-            async:true,
-            dataType: "json",
             success:function(data){
                 console.log(data)
                 console.log(data[1]);
@@ -54,5 +52,4 @@ $(".input-group-text").click(function(){
             $('#newtext').append(response[2])
         });
     });'; // url to look for using the search input by the user'
-})
 })
