@@ -1,13 +1,15 @@
-.list-group-item {
-  line-height: 2.5;
-}
 
 body{
- 
+  background-image: url('./images2/photo-1421930535025-d2af27c14065.jpeg');
+  height: 700px;
   background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+}
+.row{
+  margin-top: 15%;
 }
 .input-group{
   margin-top: 5%;
@@ -20,38 +22,23 @@ body{
 }
 .bg1{
  
-  display:-webkit-flex;
-  
-  width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-image:-webkit-linear-gradient(left bottom, rgba(30, 31, 58, 0.8),rgba(12, 23, 97, 0.8));
 }
 article{
   color:#fff;
   font-family:Arial;
 }
-h1,h4,p{font-weight:normal;line-height:1.2}
-h4{text-transform:uppercase;}
-h1{margin:10px 0 20px}
-@keyframes animateBackground{
-  0%{background-position:0, 0}
-  50%{background-position:100% 0}
-  100%{background-position:0, 0}
-}
-@-webkit-keyframes animateBackground{
-  0%{background-position:0, 0}
-  50%{background-position:100% 0}
-  100%{background-position:0, 0}
-}
+
 #introText{
   z-index: 1;
   font-size: 80px;
     width: 400px;
 }
 .navbar{
-  
+  position: fixed;
   height: 80px;
-    
+  top: -0%; 
     width: 100%;
     background: #fefdffad;
 
@@ -63,9 +50,8 @@ h1{margin:10px 0 20px}
   z-index: 1;
 }
 .container{
-  width: 100%;
-    margin: 0px;
-    padding: 0px;
+  margin: 0;
+    
 }
 
 @media (min-width: 1200px){
@@ -103,8 +89,8 @@ section {
 html,
 body {
   height: 100vh;
-  background-color: #000;
-  overflow: hidden;
+  
+  
 }
 
 body {
