@@ -27,32 +27,28 @@ $.ajax({
 }
 });*/
 
-$(".input-group-text").click(function(){
+
 
     //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
-    $(".input-group-text").click(function(){
+    $(".btn-outline-success").click(function(){
 
         var searchTerm = $(".form-control").val();// value entered by the user
         //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
-        var url = 'https://genelab-data.ndc.nasa.gov/genelab/data/search?term='+searchTerm+ '&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'; // url to look for using the search input by the user
+        var url = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'; // url to look for using the search input by the user
     
         $.ajax({
             type:"GET",
             url:url,
-            async:true,
-            dataType: "json",
-            success:function(data){
-                console.log(data)
-                console.log(data[1]);
-                console.log(data[2]);
-                console.log(data[3]);
-            },
-    
-            error: function(errorMessage){alert("Error");}
-        }).then(function(response){
-            console.log(response)
-            $('#newtext').append(response[2])
-        });
-    });'; // url to look for using the search input by the user'
-})
+            success:function(result, error){
+                console.log(result)
+                console.log(result.near_earth_objects)
+                Object.keys(result.near_earth_objects).forEach(element => {
+                    $('#firstP').text(result.near_earth_objects)
+
+                    console.log(result.near_earth_objects[element])
+                });
+               
+            }
+    });
+ }) // url to look for using the search input by the user'
 })
