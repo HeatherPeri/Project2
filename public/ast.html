@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>Astriod Data</title>
+  <title>Asteriod Data</title>
 </head>
 
 <body>
@@ -35,22 +35,16 @@
         // Log the resulting object
         console.log(response);
 
-        for (i = 0; i < response.length; i++) { 
-         $(".name").append("Name:" + response.name);
-        $(".diameter").text("Wind Speed: " + response.estimated_diameter.feet);
-        // $(".hazardous").text("Humidity: " + response.is_potentially_hazardous_asteroid);
-
+        var nearearth = response.near_earth_objects["2015-09-08"];
+        for (i = 0; i < nearearth.length; i++) { 
+          
+        $(".name").append(" Name: " + nearearth[i].name)
+        $(".diameter").append(" Diameter: " + nearearth[i].estimated_diameter.feet.estimated_diameter_max);
+        $(".hazardous").append(" Hazardous: " + nearearth[i].is_potentially_hazardous_asteroid);
+        
+        JSON.stringify(nearearth);
 }
 
-    //     // Transfer content to HTML
-    //     $(".name").text("Name:" + response.name);
-    //     $(".diameter").text("Wind Speed: " + response.estimated_diameter.feet);
-    //     $(".hazardous").text("Humidity: " + response.is_potentially_hazardous_asteroid);
-
-    //     // Log the data in the console as well
-    //     console.log("Name: " + response.name);
-    //     console.log("Diameter: " + response.estimated_diameter.feet);
-    //     console.log("Hazardous: " + response.is_potentially_hazardous_asteroid);
       });
   </script>
 </body>
