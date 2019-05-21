@@ -37,23 +37,23 @@ $.ajax({
         var url = 'https://api.nasa.gov/neo/rest/v1/feed?start_date=2015-09-07&end_date=2015-09-08&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'; // url to look for using the search input by the user
     
         $.ajax({
-            type:"GET",
-            url:url,
-            success:function(result, error){
-                console.log(result)
-                console.log(result.near_earth_objects)
-                Object.keys(result.near_earth_objects).forEach(element => {
-                    for (i = 0; i < element.length; i++) { 
-                        console.log(element[i].links)
-                      }
-                    $('#firstP').text(result.near_earth_objects)
-                    var current;
-                    console.log(result.near_earth_objects[element])
-                    current.push[result.near_earth_objects[element]];
-                    console.log(current);
-                });
-               
-            }
-    });
- }) // url to look for using the search input by the user'
+          type:"GET",
+          url:url,
+          success:function(result, error){
+              console.log(result)
+              console.log(result.near_earth_objects)
+              Object.keys(result.near_earth_objects).forEach(element => {
+                var try2 = result.near_earth_objects[element];
+                console.log(try2)
+                var theDate = try2[0].close_approach_data[0].close_approach_date
+                $('#firstP').append((theDate+ "\n <br>"))
+                for (i = 0; i < try2.length; i++){
+                  console.log(result.near_earth_objects[element])
+                  console.log(try2[i])
+                  $('#firstP').append((try2[i].name + "\n <br>"))
+                }
+              });
+          }
+  });
+}) // url to look for using the search input by the user'
 })
