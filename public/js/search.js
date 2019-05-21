@@ -47,8 +47,10 @@ $.ajax({
                         console.log(element[i].links)
                       }
                     $('#firstP').text(result.near_earth_objects)
-
+                    var current;
                     console.log(result.near_earth_objects[element])
+                    current.push[result.near_earth_objects[element]];
+                    console.log(current);
                 });
                
             }
