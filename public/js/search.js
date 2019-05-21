@@ -43,13 +43,16 @@ $.ajax({
                 console.log(result)
                 console.log(result.near_earth_objects)
                 Object.keys(result.near_earth_objects).forEach(element => {
-                    $('#firstP').text(result.near_earth_objects)
-                    var current;
+                  var try2 = result.near_earth_objects[element];
+                  console.log(try2)
+                  var theDate = try2[0].close_approach_data[0].close_approach_date
+                  $('#firstP').append((theDate+ "\n <br>"))
+                  for (i = 0; i < try2.length; i++){
                     console.log(result.near_earth_objects[element])
-                    current.push[result.near_earth_objects[element]];
-                    console.log(current);
+                    console.log(try2[i])
+                    $('#firstP').append((try2[i].name + "\n <br>"))
+                  }
                 });
-               
             }
     });
  }) // url to look for using the search input by the user'
