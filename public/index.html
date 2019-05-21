@@ -18,28 +18,6 @@
 
 <body>
 
-<script>
-    window.fbAsyncInit = function() {
-      FB.init({
-        appId      : '{184321282484232}',
-        cookie     : true,
-        xfbml      : true,
-        version    : '{v3.3}'
-      });
-        
-      FB.AppEvents.logPageView();   
-        
-    };
-  
-    (function(d, s, id){
-       var js, fjs = d.getElementsByTagName(s)[0];
-       if (d.getElementById(id)) {return;}
-       js = d.createElement(s); js.id = id;
-       js.src = "https://connect.facebook.net/en_US/sdk.js";
-       fjs.parentNode.insertBefore(js, fjs);
-     }(document, 'script', 'facebook-jssdk'));
-  </script>
-
       <div id="fb-root"></div>
       <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=184321282484232&autoLogAppEvents=1"></script>
     
@@ -87,7 +65,7 @@
                             </div>
                           </li>
                           <li class="nav-item">
-                              <div class="fb-login-button" data-width="" data-size="medium" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
+                              <div class="fb-login-button" onclick="login()" data-width="" data-size="medium" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
 
                           </li>
                         </ul>
@@ -172,6 +150,36 @@
         </div>
         </div>
    </div>
+      <script>
+
+          function login(){
+          FB.getLoginStatus(function(response) {
+            console.log(response);
+              // statusChangeCallback(response);
+          })};
+
+
+          window.fbAsyncInit = function() {
+            FB.init({
+              appId      : '184321282484232',
+              cookie     : true,
+              xfbml      : true,
+              version    : 'v3.3'
+            });
+              
+            FB.AppEvents.logPageView();   
+              
+          };
+        
+          (function(d, s, id){
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement(s); js.id = id;
+            js.src = "https://connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+    </script>
+
    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
 
