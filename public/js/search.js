@@ -32,11 +32,11 @@ $.ajax({
 
     //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
     var todayDate = moment().format('YYYY-MM-DD');
-    var endDate = moment().add(7, 'days').format('YYYY-MM-DD'); 
+    var endDate = moment().add(2, 'days').format('YYYY-MM-DD'); 
     console.log(todayDate)
     var searchTerm = $(".form-control").val();// value entered by the user
         //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
-        var url = 'https://api.nasa.gov/neo/rest/v1/feed?start_date='+todayDate+'&end_date='+endDate+'&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'; // url to look for using the search input by the user
+        var url = 'https://api.nasa.gov/neo/rest/v1/feed?size=2&start_date='+todayDate+'&end_date='+endDate+'&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'; // url to look for using the search input by the user
     
         $.ajax({
           type:"GET",
@@ -48,11 +48,11 @@ $.ajax({
                 var try2 = result.near_earth_objects[element];
                 console.log(try2)
                 var theDate = try2[0].close_approach_data[0].close_approach_date
-                $('#secondP').append((theDate+ "\n <br>"))
+                $('#secondP').append(('date:'+theDate+ "\n <br>"))
                 for (i = 0; i < try2.length; i++){
                   console.log(result.near_earth_objects[element])
                   console.log(try2[i])
-                  $('#secondP').append(('<p> name :</p>'+ '\n'+try2[i].name + "\n <br>"))
+                  $('#secondP').append('name:'+(try2[i].name + "\n <br>"))
                 }
               });
           }
