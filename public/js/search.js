@@ -44,8 +44,10 @@ $.ajax({
                 console.log(result.near_earth_objects)
                 Object.keys(result.near_earth_objects).forEach(element => {
                     $('#firstP').text(result.near_earth_objects)
-
+                    var current;
                     console.log(result.near_earth_objects[element])
+                    current.push[result.near_earth_objects[element]];
+                    console.log(current);
                 });
                
             }
