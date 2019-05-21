@@ -43,6 +43,9 @@ $.ajax({
                 console.log(result)
                 console.log(result.near_earth_objects)
                 Object.keys(result.near_earth_objects).forEach(element => {
+                    for (i = 0; i < element.length; i++) { 
+                        console.log(element[i].links)
+                      }
                     $('#firstP').text(result.near_earth_objects)
 
                     console.log(result.near_earth_objects[element])
