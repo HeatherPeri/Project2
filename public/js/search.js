@@ -45,14 +45,14 @@ $.ajax({
               console.log(result)
               console.log(result.near_earth_objects)
               Object.keys(result.near_earth_objects).forEach(element => {
-                var try2 = result.near_earth_objects[element];
-                console.log(try2)
-                var theDate = try2[0].close_approach_data[0].close_approach_date
+                var astroidObject = result.near_earth_objects[element];
+                console.log(astroidObject)
+                var theDate = astroidObject[0].close_approach_data[0].close_approach_date
                 $('#secondP').append(('date:'+theDate+ "\n <br>"))
-                for (i = 0; i < try2.length; i++){
+                for (i = 0; i < astroidObject.length; i++){
                   console.log(result.near_earth_objects[element])
-                  console.log(try2[i])
-                  $('#secondP').append('name:'+(try2[i].name + "\n <br>"))
+                  console.log(astroidObject[i])
+                  $('#secondP').append('name:'+(astroidObject[i].name + "\n <br>"))
                 }
               });
           }
