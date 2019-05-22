@@ -6,9 +6,7 @@ $(function() {
   $('#introText').hide()
   $('.hero-btn').mouseenter(function(){
       $('#introText').delay( 50 ).fadeIn(1000)
-      var elmnt = document.getElementById(".container");
-      var y = elmnt.scrollTop;
-      elmnt.scrollTop = 10;
+      
   
   })
   $('.hero-btn').mouseleave(function(){
