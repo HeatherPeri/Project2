@@ -76,9 +76,9 @@ epic()
                     for(i = 0; i< data.length; i++){
                         console.log(cat[0])
                         console.log(description[0])
-                        $('.container').append(cat[0])
-                        $('.container').append(description[0])
-                        $('.container').append('<a href ='+link[0]+'>' + link[0] + '</a>')
+                        $('#wikiTitle').append(cat[0])
+                        $('#wikiText').append(description[0])
+                        $('#wikiLinks').append('<tr> <td><a href ='+link[0]+'>' + link[0] + '</a></td></tr>')
                     }
                 }
             },
