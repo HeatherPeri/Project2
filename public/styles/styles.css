@@ -49,6 +49,17 @@ article{
 #introText{
   z-index: 1;
 }
+#space{
+  padding-right: 20px;
+}
+#boldspace{
+  font-weight: bold;
+  padding-right: 20px;
+}
+#bluespace{
+  color: cyan;
+  padding-right: 20px;
+}
 .container{
   margin: 0;
     

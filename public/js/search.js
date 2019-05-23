@@ -105,25 +105,33 @@ $.ajax({
         var url = 'https://api.nasa.gov/neo/rest/v1/feed?size=2&start_date='+todayDate+'&end_date='+endDate+'&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'; // url to look for using the search input by the user
     
         $.ajax({
-          type:"GET",
-          url:url,
-          success:function(result, error){
-              console.log(result)
-              //console.log(result.near_earth_objects)
-              Object.keys(result.near_earth_objects).forEach(element => {
-                var try2 = result.near_earth_objects[element];
-                console.log(element)
-                var theDate = try2[0].close_approach_data[0].close_approach_date
-                $('.block2').append(('<p class="asteroidText">'+ 'date:'+theDate+'</p>'))
-                for (i = 0; i < try2.length; i++){
-                  console.log(result.near_earth_objects[element])
-                  console.log(try2[i])
-                  $('.block2').append('<p class="asteroidText">'+ 'name:'+(try2[0].name + '</p>'))
-                  $('')
-                   console.log(theDate)
-                  
-                }
-              });
+          type: "GET",
+          url: url,
+          success: function (result, error) {
+            console.log(result)
+            console.log(result.near_earth_objects)
+            Object.keys(result.near_earth_objects).forEach(element => {
+              var astroidObject = result.near_earth_objects[element];
+              console.log(astroidObject)
+              var theDate = astroidObject[0].close_approach_data[0].close_approach_date
+              $('#secondP').append(("<tr><td id='boldspace'>" + theDate + "" + "</td></tr>"))
+              for (i = 0; i < astroidObject.length; i++) {
+                console.log(result.near_earth_objects[element])
+                console.log(astroidObject[i])
+                var name = astroidObject[i].name;
+                var nasaUrl = astroidObject[i].nasa_jpl_url;
+                var distance = astroidObject[i].close_approach_data[0].miss_distance.miles;
+                var trimDistance = distance.slice(0, -8);
+                var speed = astroidObject[i].close_approach_data[0].relative_velocity.miles_per_hour;
+                var trimSpeed = speed.slice(0, -11);
+                var hazardous = astroidObject[i].is_potentially_hazardous_asteroid;
+                if (hazardous == true){
+                  hazardous = "<i style='font-weight: bolder;'>true</i>"
+                };
+                $('#secondP').append(("<tr><<td id='bluespace'><a target='_blank' href='" + nasaUrl + "'" + '>' + name + "</a></td><td id='space'>" + trimDistance + "</td><td id='space'>" + trimSpeed + "</td><td id='space'>" + hazardous + "</td></tr>"))
+              }
+            });
           }
-  });
-}) // url to look for using the search input by the user'
+        });
+      }) // url to look for using the search input by the user'
+      
