@@ -79,25 +79,23 @@ section {
 }
 .block2 {
   margin-right: 20px;
+  color: white;
 }
-
+.asteroidText{
+  font-size: 20px;
+}
 /*STARS ANIMATION*/
 
 
 @import url(https://fonts.googleapis.com/css?family=Roboto:500);
 
-html,
-body {
-  height: 100vh;
-  
-  
-}
+
 
 body {
   font-family: 'Roboto', sans-serif;
-  display: flex;
+  /*display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: center;*/
 }
 
 a {
@@ -173,5 +171,19 @@ a {
 
 #profile-hook:hover {
   opacity: 1;
+}
+.imgoftheday{
+  color: white;
+  width: 100%;
+    margin-top: 20%;
+    height: 400px;
+}
+.imgcol{
+  float: left;
+  margin: 2%;
+    margin-bottom: 1%;
+}
+.colexpl{
+  margin-left: 25%;
 }
 /*navbar buttons*/

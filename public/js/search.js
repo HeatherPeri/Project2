@@ -1,15 +1,51 @@
 $(document).ready(function(){
 
+
+     function displayAPOD(){
+        var url = "https://api.nasa.gov/planetary/apod?api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN";
+         $.ajax({
+          url: url,
+          success: function(result){
+              console.log(result)
+          //if("copyright" in result) {
+            //$("#copyright").text("Image Credits: " + result.copyright);
+          //}
+          //else {
+            //$("#copyright").text("Image Credits: " + "Public Domain");
+          //}
+          
+          if(result.media_type == "video") {
+            $("#apod_img_id").css("display", "none"); 
+            $("#apod_vid_id").attr("src", result.url);
+          }
+          else {
+            $("#apod_vid_id").css("display", "none"); 
+            $("#apod_img_id").attr("src", result.url);
+          }
+          $("#reqObject").text(url);
+          $("#returnObject").text(JSON.stringify(result, null, 4));  
+          $("#apod_explaination").text(result.explanation);
+          $("#apod_title").text(result.title);
+        }
+        });
+    }
+    displayAPOD()
+
+
+
+
+
+
     $('.btn-outline-success').on('click', function(){
 
         var searchTerm = $(".form-control").val();// value entered by the user
         //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
         //var url = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ searchTerm + "&srsearch=meaning&format=json&callback=?"; // url to look for using the search input by the user
-        var url = 'https://genelab-data.ndc.nasa.gov/genelab/data/search?term='+searchTerm+ '&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'; // url to look for using the search input by the user
+        var wikiurl = 'https://genelab-data.ndc.nasa.gov/genelab/data/search?term='+searchTerm+ '&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'; // url to look for using the search input by the user
 
         $.ajax({
             type:"GET",
-            url:url,
+            url:wikiurl,
             async:true,
             dataType: "json",
             success:function(data){
@@ -62,7 +98,7 @@ $.ajax({
 
     //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
     var todayDate = moment().format('YYYY-MM-DD');
-    var endDate = moment().add(2, 'days').format('YYYY-MM-DD'); 
+    var endDate = moment().add(0, 'days').format('YYYY-MM-DD'); 
     console.log(todayDate)
     var searchTerm = $(".form-control").val();// value entered by the user
         //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
@@ -72,17 +108,20 @@ $.ajax({
           type:"GET",
           url:url,
           success:function(result, error){
-              //console.log(result)
+              console.log(result)
               //console.log(result.near_earth_objects)
               Object.keys(result.near_earth_objects).forEach(element => {
                 var try2 = result.near_earth_objects[element];
-                //console.log(try2)
+                console.log(element)
                 var theDate = try2[0].close_approach_data[0].close_approach_date
-                $('#secondP').append(('date:'+theDate+ "\n <br>"))
+                $('.block2').append(('<p class="asteroidText">'+ 'date:'+theDate+'</p>'))
                 for (i = 0; i < try2.length; i++){
-                  //console.log(result.near_earth_objects[element])
-                  //console.log(try2[i])
-                  $('#secondP').append('name:'+(try2[i].name + "\n <br>"))
+                  console.log(result.near_earth_objects[element])
+                  console.log(try2[i])
+                  $('.block2').append('<p class="asteroidText">'+ 'name:'+(try2[0].name + '</p>'))
+                  $('')
+                   console.log(theDate)
+                  
                 }
               });
           }
