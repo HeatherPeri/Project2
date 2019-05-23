@@ -37,27 +37,41 @@
 
               </li>
             </ul>
-            <form class="form-inline my-2 my-lg-0">
+           <!-- <form class="form-inline my-2 my-lg-0">
               <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
               <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
-          </div>
+          </div>-->
         </nav>
        
         <div class="container imgoftheday">
-            <h1 id="imgofthedayTitle">Image Of The Day</h1>
-        <div class="col col-md-4 imgcol">
-        <img id="apod_img_id" width="600px"/>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><img src="./styles/images2/loupe.png" id="searchImg"></span>
+                </div>
+                <input type="text" class="form-control" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+          <div class="container imgofthedaybackground">
+            <div class="row">
+                <h2 id="imgofthedayTitle">Image Of The Day</h2>
+            </div>
+          <div class="row">
+              
+        <div class="col col-md-2 imgcol">
+        <img id="apod_img_id" width="400px"/>
       </div>
-      <div class="col-md-8 colexpl">
+      <div class="col-md-6 colexpl">
       <h3 id="apod_title"></h3>
         <p id="apod_explaination"></p>
       </div>
         <iframe id="apod_vid_id" type="text/html" width="640" height="385" frameborder="0"></iframe>
         <p id="copyright"></p>
+      </div>
+      </div>
         
         
-        <br/>
+      
+    </br>
         <div class="row">
             <!--<img id="img_id" width="300px"/>-->
           <div id="asteroids"><a href="./asteroids.html">Upcoming Asteroids</a><img src="./styles/images2/meteorite.png" id="astImg"></div>

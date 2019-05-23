@@ -51,7 +51,7 @@ epic()
 
 
 
-    $('.btn-outline-success').on('click', function(){
+    $('#searchImg').on('click', function(){
 
         var searchTerm = $(".form-control").val();// value entered by the user
         //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
