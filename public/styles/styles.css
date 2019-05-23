@@ -16,10 +16,16 @@ a:hover{
   cursor: pointer;
 }
 .row{
-  margin-top: 10%;
+ 
 }
 .input-group{
   margin-top: 5%;
+}
+.form-control{
+  background: #ffffff9c;
+}
+#searchImg{
+  width: 50px;
 }
 #home{
   
@@ -250,30 +256,35 @@ a {
 }
 .imgcol{
   float: left;
-  margin: 2%;
-    margin-bottom: 1%;
+margin-top: 1%;
 }
 .colexpl{
-  margin-left: 25%;
-  padding-top: 1%;
+  margin: 0px;
+  margin-left: 10%;
 }
 #apod_explaination{
-  margin-left: 25%;
+  
     font-size: 22px;
     margin-top: 1%;
 }
 #apod_title{
-  margin-left: 25%;
+  
   font-size: 40px;
   margin-bottom: 0px;
 }
 #imgofthedayTitle{
   text-align: center;
     font-size: 60px;
-    margin-bottom: 4%;
+    
+}
+.imgofthedaybackground{
+  background: #fdfdfd8c;
+  margin-top: 5%;
+    margin-bottom: 5%;
 }
 #apod_img_id{
   box-shadow: -2px 0px 14px 3px #888888;
+  margin-top: 21%;
 
 }
 /*navbar buttons*/
