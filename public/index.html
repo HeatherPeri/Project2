@@ -9,115 +9,167 @@
   <link rel="stylesheet" type="text/css" href="./styles/style.css">
 
   <title>Home Page</title>
-  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
   <script src="./js/index.js"></script>
   <script src="./js/animation.js"></script>
   <script src="./js/search.js"></script>
-
+  
+  
 </head>
 
 <body>
-      <div id="fb-root"></div>
-      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=184321282484232&autoLogAppEvents=1"></script>
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=184321282484232&autoLogAppEvents=1"></script>
     
-    
+      <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <img src="./styles/images2/moon-phase.png" id="navImg">
+          <a class="navbar-brand" href="#">ASTRONOMY</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+        
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+              
+              <li class="nav-item">
+                  <div class="fb-login-button" onclick="loginFB()" data-width="" data-size="medium" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
 
-    <a href="#" class="hero-btn">
-        SEE<br>THE<br><span class="str">STARS</span>
-      </a>
-      <h2 id="introText">Take a journey with us into the sky!</h2>
-      <div class="bg"></div>
-      
-      <a id="profile-hook" href="https://codepen.io/johnchinjew">
-        <span>Made by </span>
-        <img id="intro_img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/256705/profile/profile-80_73.jpg">
-      </a>
-      
-  
-      <div id="home">
-          <div class="bg1">
-              <div class="container">
-      <nav class="navbar">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <a href="#" class="btn btn-sm animated-button sandy-one">Sign up</a>
-          <div class="fb-login-button" data-width="" data-size="large" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
-          <!-- <a href="#" class="btn btn-sm animated-button sandy-two">Login</a> -->
-          <div class="input-group flex-nowrap">
-              <div class="input-group-prepend">
-                <span class="input-group-text" id="addon-wrapping"><img src="./styles/images2/magnifier.png"></span>
-              </div>
-              <input type="text" class="form-control" placeholder="Search" aria-label="Username" aria-describedby="addon-wrapping">
-            </div>
+              </li>
+            </ul>
+           <!-- <form class="form-inline my-2 my-lg-0">
+              <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+              <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            </form>
+          </div>-->
         </nav>
-        <main class="container">
-          <section class="row">
-              <div class="col-md-2">
-                  <article class="block1">
-                    <br></br><br></br>
-                    <h1 class="block-header">Upcoming Events!</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                      dolore
-                      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                      commodo
-                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                      pariatur.
-                      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                      laborum.</p>
-                    <br />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                      dolore
-                      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                      commodo
-                      consequat.
-                    </p>
-                  </article>
+       
+        <div class="container imgoftheday">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1"><img src="./styles/images2/loupe.png" id="searchImg"></span>
                 </div>
-              <div class="col-md-8">
-                  <article class="middle">
-                    <h1 class="block-header">Upcoming asteroids!</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                      dolore
-                      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                      commodo
-                      consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                      pariatur.
-                      Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                      laborum.</p>
-                    <br />
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                      dolore
-                      magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                      commodo
-                      consequat.
-                    </p>
-                  </article>
-                </div>
-            <div class="col-md-2">
-              <article class="block2">
-                  <br></br><br></br>
-                <h1 class="block-header">Your saved events</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore
-                  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo
-                  consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                  pariatur.
-                  Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est
-                  laborum.</p>
-                <br />
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                  dolore
-                  magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-                  commodo
-                  consequat.
-                </p>
-              </article>
+                <input type="text" class="form-control" placeholder="WikiSearch" aria-label="Username" aria-describedby="basic-addon1">
+              </div>
+              <div class="container wikiSearchDisplay">
+                <h2 id="wikiTitle"></h2>
+                <p id="wikiText"></p>
+                <div id="wikiLinks"></div>
+              </div>
+          <div class="container imgofthedaybackground">
+            <div class="row">
+                <h2 id="imgofthedayTitle">Image Of The Day</h2>
             </div>
-          </section>
-        </main>
+          <div class="row">
+      <div class="col-md-6 colexpl">
+      <h3 id="apod_title"></h3>
+        <p id="apod_explaination"></p>
+      </div>
+      <div class="col col-md-2 imgcol">
+          <img id="apod_img_id" width="500px"/>
         </div>
+        <iframe id="apod_vid_id" type="text/html" width="640" height="385" frameborder="0"></iframe>
+        <p id="copyright"></p>
+      </div>
+      </div>
+        
+        
+      
+    </br>
+        <div class="row">
+            <!--<img id="img_id" width="300px"/>-->
+          <div id="asteroids"><a href="./asteroids.html">Upcoming Asteroids</a><img src="./styles/images2/meteorite.png" id="astImg"></div>
+         
+          <div id="events"><img src='./styles/images2/calendar.png' id="eventsImg"> <a href="./events.html"> Upcoming Events </a></div>
+          <div id="nasaepic"><a href="./nasaEpic.html">Discover Nasa EONET </a><img src="./styles/images2/worldwide.png" id="epicImg"></div>
         </div>
-   </div>
+        
+      </div>
+      
+          
+          
+        
+        
+        <script>
+          var person = {userID: "", name: "", accessToken:"", picture:"", emailAddress:""};
+          function loginFB(){
+            FB.login(function(response) {
+              if (response.status == "connected") {
+                person.userID = response.authResponse.userID;
+                person.accessToken = response.authResponse.accessToken;
+              }
+              console.log(response)
+            }, {scope: 'public_profile,email'});
+          };
+          function statusChangeCallback(response) {
+              console.log('statusChangeCallback');
+              console.log(response);
+          //     // The response object is returned with a status field that lets the
+          //     // app know the current login status of the person.
+          //     // Full docs on the response object can be found in the documentation
+          //     // for FB.getLoginStatus().
+              if (response.status === 'connected') {
+                // Logged into your app and Facebook.
+                testAPI();
+              } else {
+          //       // The person is not logged into your app or we are unable to tell.
+                document.getElementById('status').innerHTML = 'Please log ' +
+                  'into this app.';
+              }
+            }
+          //   // This function is called when someone finishes with the Login
+          //   // Button.  See the onlogin handler attached to it in the sample
+          //   // code below.
+            function checkLoginState() {
+              FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+              });
+            }
+            window.fbAsyncInit = function() {
+              FB.init({
+                appId      : '184321282484232',
+                cookie     : true,  // enable cookies to allow the server to access 
+                                    // the session
+                xfbml      : true,  // parse social plugins on this page
+                version    : 'v3.3' // The Graph API version to use for the call
+              });
+              // Now that we've initialized the JavaScript SDK, we call 
+              // FB.getLoginStatus().  This function gets the state of the
+              // person visiting this page and can return one of three states to
+              // the callback you provide.  They can be:
+              //
+              // 1. Logged into your app ('connected')
+              // 2. Logged into Facebook, but not your app ('not_authorized')
+              // 3. Not logged into Facebook and can't tell if they are logged into
+              //    your app or not.
+              //
+              // These three cases are handled in the callback function.
+              FB.getLoginStatus(function(response) {
+                statusChangeCallback(response);
+              });
+            };
+            // Load the SDK asynchronously
+            (function(d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s); js.id = id;
+              js.src = "https://connect.facebook.net/en_US/sdk.js";
+              fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+            // Here we run a very simple test of the Graph API after login is
+            // successful.  See statusChangeCallback() for when this call is made.
+            function testAPI() {
+              console.log('Welcome!  Fetching your information.... ');
+              FB.api('/me', function(response) {
+                console.log('Successful login for: ' + response.name);
+                document.getElementById('status').innerHTML =
+                  'Thanks for logging in, ' + response.name + '!';
+              });
+            }
+          </script>
+         
+  
    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
 </body>
 
