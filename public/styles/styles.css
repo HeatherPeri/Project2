@@ -18,6 +18,9 @@ a:hover{
 .row{
  
 }
+#severeStorms{
+  background-image: url('./images2/storm.jpg')
+}
 .input-group{
   margin-top: 5%;
 }

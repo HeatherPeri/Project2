@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+  <link rel="stylesheet" type="text/css" href="./styles/style.css">
+  
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script src="./js/index.js"></script>
+  <script src="./js/animation.js"></script>
+  <script src="./js/search.js"></script>
+</head>
+<body>
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=184321282484232&autoLogAppEvents=1"></script>
+        
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <img src="./styles/images2/moon-phase.png" id="navImg">
+              <a class="navbar-brand" href="#">ASTRONOMY</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  
+                  <li class="nav-item">
+                      <div class="fb-login-button" onclick="loginFB()" data-width="" data-size="medium" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
+    
+                  </li>
+                </ul>
+               <!-- <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+              </div>-->
+            </nav>
+           
+    <div class="container nasa" style="margin-top: 30%;">
+        <div id="eonetDisplay" style="color: white;">
+                
+
+        </div>
+      <div id="severeStorms">
+         <h3 id="stormText">SEVERE STORM</h3>
+      </div>
+      <div id="vulkanos">
+            <img src="./styles/images2/vulkano.jpg"><h3 id="vulkanoText">VULKANOS</h3></img>
+      </div>
+    </div>
+</body>
+</html>
