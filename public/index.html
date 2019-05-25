@@ -16,6 +16,7 @@
   <script src="./js/animation.js"></script>
   <script src="./js/search.js"></script>
   
+  
 </head>
 
 <body>
@@ -81,7 +82,7 @@
           <div id="asteroids"><a href="./asteroids.html">Upcoming Asteroids</a><img src="./styles/images2/meteorite.png" id="astImg"></div>
          
           <div id="events"><img src='./styles/images2/calendar.png' id="eventsImg"> <a href="./events.html"> Upcoming Events </a></div>
-          <div id="nasaepic"><a href="./nasaEpic.html">Discover Nasa EPIC </a><img src="./styles/images2/worldwide.png" id="epicImg"></div>
+          <div id="nasaepic"><a href="./nasaEpic.html">Discover Nasa EONET </a><img src="./styles/images2/worldwide.png" id="epicImg"></div>
         </div>
         
       </div>
@@ -92,7 +93,6 @@
         
         <script>
           var person = {userID: "", name: "", accessToken:"", picture:"", emailAddress:""};
-
           function loginFB(){
             FB.login(function(response) {
               if (response.status == "connected") {
@@ -102,7 +102,6 @@
               console.log(response)
             }, {scope: 'public_profile,email'});
           };
-
           function statusChangeCallback(response) {
               console.log('statusChangeCallback');
               console.log(response);
@@ -119,7 +118,6 @@
                   'into this app.';
               }
             }
-
           //   // This function is called when someone finishes with the Login
           //   // Button.  See the onlogin handler attached to it in the sample
           //   // code below.
@@ -128,7 +126,6 @@
                 statusChangeCallback(response);
               });
             }
-
             window.fbAsyncInit = function() {
               FB.init({
                 appId      : '184321282484232',
@@ -137,7 +134,6 @@
                 xfbml      : true,  // parse social plugins on this page
                 version    : 'v3.3' // The Graph API version to use for the call
               });
-
               // Now that we've initialized the JavaScript SDK, we call 
               // FB.getLoginStatus().  This function gets the state of the
               // person visiting this page and can return one of three states to
@@ -149,13 +145,10 @@
               //    your app or not.
               //
               // These three cases are handled in the callback function.
-
               FB.getLoginStatus(function(response) {
                 statusChangeCallback(response);
               });
-
             };
-
             // Load the SDK asynchronously
             (function(d, s, id) {
               var js, fjs = d.getElementsByTagName(s)[0];
@@ -164,7 +157,6 @@
               js.src = "https://connect.facebook.net/en_US/sdk.js";
               fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
-
             // Here we run a very simple test of the Graph API after login is
             // successful.  See statusChangeCallback() for when this call is made.
             function testAPI() {

@@ -18,6 +18,63 @@ a:hover{
 .row{
  
 }
+#severeStorms{
+  background-image: url('./images2/fire.jpg');
+  margin-top: 15%;
+  height: 90px;
+  background-position: center;
+  text-align: left;
+  padding-top: 25px;
+  padding-left: 10px;
+  border: 1px black solid;
+    margin-bottom: 10px;
+}
+#vulkanos{
+  background-image: url('./images2/active-ash-color-235807.jpg');
+  height: 90px;
+  background-position: center;
+  text-align: left;
+  padding-top: 25px;
+  padding-left: 10px;
+  border: 1px black solid;
+    margin-bottom: 10px;
+}
+#snow{
+  background-image: url('./images2/cold-snow-snow-capped-45204.jpg');
+  height: 90px;
+  background-position: center;
+  text-align: left;
+  padding-top: 25px;
+  padding-left: 10px;
+  border: 1px black solid;
+    margin-bottom: 10px;
+}
+#earthquake{
+  background-image: url('./images2/abandoned-architecture-buildings-2079223.jpg');
+  height: 90px;
+  background-position: center;
+  text-align: left;
+  padding-top: 25px;
+  padding-left: 10px;
+  border: 1px black solid;
+    margin-bottom: 10px;
+}
+#wildFire{
+  background-image: url('./images2/fog.jpg');
+  height: 90px;
+  background-position: center;
+  text-align: left;
+  padding-top: 25px;
+  padding-left: 10px;
+  border: 1px black solid;
+    margin-bottom: 10px;
+}
+#eodesk{
+  width: 500px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 25px;
+}
 .input-group{
   margin-top: 5%;
 }
@@ -275,6 +332,7 @@ margin-top: 1%;
 #imgofthedayTitle{
   text-align: center;
     font-size: 60px;
+    margin-left: 10px;
     
 }
 .imgofthedaybackground{

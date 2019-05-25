@@ -41,12 +41,18 @@ function epic(){
             console.log(xhr)
             for (i = 0; i < iDataArr.length; i++){
                 //$('.container').append(iDataArr[0].image)
-                $("#img_id").attr("src",iDataArr[0].image);
+                $(".container").attr("src",iDataArr[0].image);
+                console.log(iDataArr[0].image)
             }
         }
     });
 }
 epic()
+
+
+
+  
+
 
 
 
@@ -57,7 +63,9 @@ epic()
         //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
         var wikiurl = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ searchTerm + "&srsearch=meaning&title&srlimit=1&format=json&callback=?"; // url to look for using the search input by the user
         //var wikiurl = 'https://genelab-data.ndc.nasa.gov/genelab/data/search?term='+searchTerm+ '&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'; // url to look for using the search input by the user
-
+        $('#wikiTitle').empty()
+        $('#wikiText').empty()
+        $('#wikiLinks').empty()
         $.ajax({
             type:"GET",
             url:wikiurl,
@@ -69,17 +77,23 @@ epic()
                 console.log(data[2]);
                 console.log(data[3]);
                 for (i = 0; i < data.length; i++){
+                  if (i === 1) { break; }
                     //$('.container').append(data[1])
                     var cat = data[1]
                     var description = data[2]
                     var link = data[3]
-                    for(i = 0; i< data.length; i++){
+                    
+                      console.log(cat)
                         console.log(cat[0])
                         console.log(description[0])
                         $('#wikiTitle').append(cat[0])
                         $('#wikiText').append(description[0])
                         $('#wikiLinks').append('<tr> <td><a href ='+link[0]+'>' + link[0] + '</a></td></tr>')
-                    }
+                        if(description[0] == ""){
+                          $('#wikiText').append(description[1])
+                        };
+                        
+                    
                 }
             },
 
