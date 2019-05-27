@@ -1,5 +1,33 @@
 $(document).ready(function(){
+  //$('.collapse').collapse()
+  
+  
+    var date = $('#form-mars').val()
+    var marsurl = 'http://api.open-notify.org/astros.json';
+    $.ajax({
+      type:"GET",
+      url:marsurl,
+      success: function(data){
+        console.log(data)
+        console.log(data.photos)
+        var newData = data.people
+        for (i = 0; i < newData.length; i++){
+          if (i === 1) { break; }
+         $('.panel-body').append("<p>"+newData[0].name+"</p>")
+         $('.panel-body').append("<p>"+newData[1].name+"</p>")
+         $('.panel-body').append("<p>"+newData[2].name+"</p>")
+         $('.panel-body').append("<p>"+newData[3].name+"</p>")
+         $('.panel-body').append("<p>"+newData[4].name+"</p>")
+         $('.panel-body').append("<p>"+newData[5].name+"</p>")
+         console.log(newData[0])
+         //$('.panel-body').append('<img src='+data.photos[0].img_src+'/>')
+         //$('.panel-body').append(data.photos)
+        }
+      }
 
+  
+  
+})
 
      function displayAPOD(){
         var url = "https://api.nasa.gov/planetary/apod?api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN";
@@ -30,7 +58,7 @@ $(document).ready(function(){
         });
     }
     displayAPOD()
-function epic(){
+/*function epic(){
     //var meta = JSON.parse('https://epic.gsfc.nasa.gov/api/natural');
       var currentDate = moment().format('YYYY-MM-DD');
     $.ajax('https://epic.gsfc.nasa.gov/api/natural', {
@@ -47,11 +75,10 @@ function epic(){
         }
     });
 }
-epic()
+epic()*/
 
 
 
-  
 
 
 
@@ -175,5 +202,6 @@ $.ajax({
             });
           }
         });
+        
       }) // url to look for using the search input by the user'
       
