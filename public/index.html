@@ -12,6 +12,8 @@
   
   <script src="https://code.jquery.com/jquery.js"></script>
   <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
   <script src="./js/index.js"></script>
   <script src="./js/animation.js"></script>
   <script src="./js/search.js"></script>
@@ -30,7 +32,7 @@
             <span class="navbar-toggler-icon"></span>
           </button>
         
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
               
               <li class="nav-item">
@@ -57,6 +59,20 @@
                 <p id="wikiText"></p>
                 <div id="wikiLinks"></div>
               </div>
+              <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                  <div class="panel-heading">
+                    <h4 class="panel-title">
+                      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                        People In Space
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                      
+                  </div>
+                </div>
           <div class="container imgofthedaybackground">
             <div class="row">
                 <h2 id="imgofthedayTitle">Image Of The Day</h2>
@@ -67,12 +83,14 @@
         <p id="apod_explaination"></p>
       </div>
       <div class="col col-md-2 imgcol">
-          <img id="apod_img_id" width="500px"/>
+          <img id="apod_img_id" width="500px" height="400px"/>
         </div>
-        <iframe id="apod_vid_id" type="text/html" width="640" height="385" frameborder="0"></iframe>
+        <iframe id="apod_vid_id" type="text/html" width="500" height="385" frameborder="0"></iframe>
         <p id="copyright"></p>
       </div>
+     
       </div>
+      
         
         
       
@@ -83,6 +101,7 @@
          
           <div id="events"><img src='./styles/images2/calendar.png' id="eventsImg"> <a href="./events.html"> Upcoming Events </a></div>
           <div id="nasaepic"><a href="./nasaEpic.html">Discover Nasa EONET </a><img src="./styles/images2/worldwide.png" id="epicImg"></div>
+          <div id="nasaepic"><a href="./mars.html">See Photos From Mars </a><img src="./styles/images2/worldwide.png" id="epicImg"></div>
         </div>
         
       </div>
