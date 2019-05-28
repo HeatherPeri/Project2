@@ -15,9 +15,23 @@ a:hover{
   color: black;
   cursor: pointer;
 }
+#calendar{
+  width: 900px;
+    margin-top: 10%;
+    background: #ffffff7d;
+    margin-left: 3%;
+}
+#newcalBody{
+  height: 900px;
+}
 
 #searchMars{
  width: 90px;
+}
+#upEvents{
+  background: #ffffff8a;
+    margin-top: 21%;
+    height: 400px;
 }
 #severeStorms{
   background-image: url('./images2/fire.jpg');
@@ -116,7 +130,7 @@ article{
   top: -0%; 
     width: 100%;
     background: #fefdffad;
-    z-index: 1;
+    z-index: 2;
 
 }
 .navbar-brand{

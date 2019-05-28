@@ -202,6 +202,25 @@ $.ajax({
             });
           }
         });
+        $('#searchMars').on('click', function(){
+          $('#nasaTitle').empty();
+          $('#nasaDescription').empty()
+          var query = $('#form-mars').val()
+          var imgUrl = "https://images-api.nasa.gov/search?q="+query;
+          $.ajax({
+            type: "GET",
+            url: imgUrl,
+            success: function (data) {
+              console.log(data)
+              console.log(data.collection)
+              console.log(data.collection.items[0])
+              $('#nasaTitle').append( data.collection.items[0].data[0].title)
+              $('#nasaDescription').append(data.collection.items[0].data[0].description)
+              $('#nasa_img_id').attr("src", data.collection.items[0].links[0].href)
+            }
+            })
+          })
+       
         
       }) // url to look for using the search input by the user'
       
