@@ -8,6 +8,46 @@ body{
     background-size: cover;
     position: relative;
 }
+#nasa_img_id{
+  margin-top: 10px;
+}
+#nasa_img_id2{
+  margin-top: 10px;
+}
+#nasa_img_id3{
+  margin-top: 10px;
+}
+.container.marsDisplay{
+  color: white;
+  background: #ffffff69;
+  color: white;
+    display: block;
+    margin-bottom: 20px;
+    margin-top: 80px;
+    height: 320px;
+}
+.container.marsDisplay2{
+  color: white;
+  background: #ffffff5e;
+  color: white;
+    display: block;
+    margin-bottom: 20px;
+   
+    height: 320px;
+}
+.container.marsDisplay3{
+  color: white;
+  background: #ffffff5e;
+  color: white;
+    display: block;
+    margin-bottom: 20px;
+   
+    height: 320px;
+}
+#form-mars{
+  height:80px;
+}
+
 a:hover{
   text-shadow: 5px 5px 9px #fcf8f8;
 
@@ -26,7 +66,7 @@ a:hover{
 }
 
 #searchMars{
- width: 90px;
+ width: 67px;
 }
 #upEvents{
   background: #ffffff8a;
@@ -381,4 +421,104 @@ margin-top: 1%;
   content: "\e080";    /* adjust as needed, taken from bootstrap.css */
 }
 
-/*navbar buttons*/
+/*mars buttons*/
+@import url(https://fonts.googleapis.com/css?family=Droid+Sans:700);
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+			transition: all .1s;
+		}
+		
+		.group{
+			text-align: center;
+			margin: 20px auto;
+		}
+		.group button{
+			margin-top: 10px;
+		}
+		button{
+/*			box-sizing: border-box;*/
+			background: NONE;
+			border: none;
+			outline: none;
+			border-radius: 3px;
+			padding: 15px 70px;
+			color:white;
+			text-transform: uppercase;
+			font-weight: 700;
+			text-shadow: 0 1px 3px rgba(0, 0, 0, 0.41);
+			box-shadow: 0 3px 0 0 #383838;
+			border:3px solid transparent;
+			
+		
+			animation: pulse 1s linear infinite alternate;
+			-webkit-animation: pulse 1s linear infinite alternate;
+		}
+		.active,
+		button:active{
+			background-image: linear-gradient(rgba(0,0,0,.1) 13%, transparent 13%,transparent);
+			box-shadow: 0 1px 0 0 #383838;
+			color: rgba(0, 0, 0,.45);
+			text-shadow: none;
+			
+			
+			-webkit-animation-play-state: paused; 
+    	animation-play-state: paused;
+		}
+		button:focus,
+		button:hover{
+			-webkit-animation-play-state: paused; 
+    	animation-play-state: paused;
+		}
+		
+		
+		.blam:focus,
+		.blam:hover{
+			
+		}
+		.blam{
+		
+		}
+		
+		.syke:focus,
+		.syke:hover{
+			
+		}
+		.syke{
+		
+		}
+		
+		.later:focus,
+		.later:hover{
+			
+		}
+		.later{
+			
+		}
+		.marsbtn{
+      background: #03a9f480;
+      
+
+    }
+    .marsbtn:hover{
+      background: #3764c780;
+      box-shadow: 0px 1px 20px 10px #1b11a5;
+    
+    }
+		@-webkit-keyframes pulse {
+			100% {
+				transform: translateY(6.9px); 
+			} 
+		}
+
+		@keyframes pulse {
+			100% {
+				transform: translateY(6.9px); 
+			} 
+    }
+    #marsDirc{
+      color: white;
+    text-align: center;
+    font-size: 60px;
+    }

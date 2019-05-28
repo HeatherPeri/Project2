@@ -202,9 +202,19 @@ $.ajax({
             });
           }
         });
+        $('.marsDisplay').hide()
+        $('.marsDisplay2').hide()
+        $('.marsDisplay3').hide()
         $('#searchMars').on('click', function(){
           $('#nasaTitle').empty();
           $('#nasaDescription').empty()
+          $('.marsDisplay').fadeIn()
+          $('#nasaTitle2').empty();
+          $('#nasaDescription2').empty()
+          $('.marsDisplay2').fadeIn()
+          $('#nasaTitle3').empty();
+          $('#nasaDescription3').empty()
+          $('.marsDisplay3').fadeIn()
           var query = $('#form-mars').val()
           var imgUrl = "https://images-api.nasa.gov/search?q="+query;
           $.ajax({
@@ -217,9 +227,51 @@ $.ajax({
               $('#nasaTitle').append( data.collection.items[0].data[0].title)
               $('#nasaDescription').append(data.collection.items[0].data[0].description)
               $('#nasa_img_id').attr("src", data.collection.items[0].links[0].href)
+              $('#nasaTitle2').append( data.collection.items[1].data[0].title)
+              $('#nasaDescription2').append(data.collection.items[1].data[0].description)
+              $('#nasa_img_id2').attr("src", data.collection.items[1].links[0].href)
+              $('#nasaTitle3').append( data.collection.items[2].data[0].title)
+              $('#nasaDescription3').append(data.collection.items[2].data[0].description)
+              $('#nasa_img_id3').attr("src", data.collection.items[2].links[0].href)
             }
             })
           })
+         
+           $('.marsbtn').on('click', function(){
+              $('#nasaTitle').empty();
+          $('#nasaDescription').empty()
+          $('#nasaTitle2').empty();
+          $('#nasaDescription2').empty()
+          $('#nasaTitle3').empty();
+          $('#nasaDescription3').empty()
+          $('.marsDisplay').fadeIn()
+          $('.marsDisplay2').fadeIn()
+          $('.marsDisplay3').fadeIn()
+          var $this = $(this)
+              var btnquery =$(this).val()
+              console.log(btnquery)
+          var mrsurl = "https://images-api.nasa.gov/search?q="+btnquery;
+          $.ajax({
+            type: "GET",
+            url: mrsurl,
+            success: function (data) {
+              console.log(data)
+              console.log(data.collection)
+              console.log(data.collection.items[0])
+              $('#nasaTitle').append( data.collection.items[0].data[0].title)
+              $('#nasaDescription').append(data.collection.items[0].data[0].description)
+              $('#nasa_img_id').attr("src", data.collection.items[0].links[0].href)
+              $('#nasaTitle2').append( data.collection.items[1].data[0].title)
+              $('#nasaDescription2').append(data.collection.items[1].data[0].description)
+              $('#nasa_img_id2').attr("src", data.collection.items[1].links[0].href)
+              $('#nasaTitle3').append( data.collection.items[2].data[0].title)
+              $('#nasaDescription3').append(data.collection.items[2].data[0].description)
+              $('#nasa_img_id3').attr("src", data.collection.items[2].links[0].href)
+            }
+            })
+            })
+          
+         
        
         
       }) // url to look for using the search input by the user'
