@@ -1,3 +1,4 @@
+
 Project title
 The name of our project is AstronoME. We completed this project as part of our Full Stack Flex Coding Program under UNC Chapel Hill.
 
@@ -29,3 +30,4 @@ Improvements
 
 Credits
 This was done as part of the school program. Heather Peri, Tiffany Brincefield, Yevheniia Dilekoglu and Chase Vernon are the team members.
+
