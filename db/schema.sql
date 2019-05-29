@@ -1,4 +1,5 @@
-CREATE DATABASE IF NOT EXISTS astrology_db;
+DROP DATABASE IF NOT EXISTS astrology_db;
+CREATE DATABASE astrology_db;
 USE astrology_db;
 
 -- If the table already exists, remove it before trying to create the table again
