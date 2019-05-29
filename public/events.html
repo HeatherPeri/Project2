@@ -71,17 +71,6 @@
  </body>
 
  <script>
-
-        //  document.addEventListener('DOMContentLoaded', function() {
-        //    var calendarEl = document.getElementById('calendar');
-    
-        //    var calendar = new FullCalendar.Calendar(calendarEl, {
-        //      plugins: [ 'dayGrid', 'timeGrid', 'list', interactionPlugin ],
-        //         droppable: true 
-        //    });
-    
-        //    calendar.render();
-        //  });
     
         document.addEventListener('DOMContentLoaded', function() {
       var calendarEl = document.getElementById('calendar');
@@ -101,11 +90,12 @@
     
               if (!isNaN(date.valueOf())) { // valid?
                 calendar.addEvent({
-                  title: 'dynamic event',
+                  title: 'New Asteriod Event!',
                   start: date,
                   allDay: true
                 });
-                alert('Great. Now, update your database...');
+                alert('New Asteriod Event Added!'); 
+                // Great. Now, update your database...
               } else {
                 alert('Invalid date.');
               }
