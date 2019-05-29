@@ -1,5 +1,33 @@
 $(document).ready(function(){
+  //$('.collapse').collapse()
+  
+  
+    var date = $('#form-mars').val()
+    var marsurl = 'http://api.open-notify.org/astros.json';
+    $.ajax({
+      type:"GET",
+      url:marsurl,
+      success: function(data){
+        console.log(data)
+        console.log(data.photos)
+        var newData = data.people
+        for (i = 0; i < newData.length; i++){
+          if (i === 1) { break; }
+         $('.panel-body').append("<p>"+newData[0].name+"</p>")
+         $('.panel-body').append("<p>"+newData[1].name+"</p>")
+         $('.panel-body').append("<p>"+newData[2].name+"</p>")
+         $('.panel-body').append("<p>"+newData[3].name+"</p>")
+         $('.panel-body').append("<p>"+newData[4].name+"</p>")
+         $('.panel-body').append("<p>"+newData[5].name+"</p>")
+         console.log(newData[0])
+         //$('.panel-body').append('<img src='+data.photos[0].img_src+'/>')
+         //$('.panel-body').append(data.photos)
+        }
+      }
 
+  
+  
+})
 
      function displayAPOD(){
         var url = "https://api.nasa.gov/planetary/apod?api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN";
@@ -30,7 +58,7 @@ $(document).ready(function(){
         });
     }
     displayAPOD()
-function epic(){
+/*function epic(){
     //var meta = JSON.parse('https://epic.gsfc.nasa.gov/api/natural');
       var currentDate = moment().format('YYYY-MM-DD');
     $.ajax('https://epic.gsfc.nasa.gov/api/natural', {
@@ -47,11 +75,10 @@ function epic(){
         }
     });
 }
-epic()
+epic()*/
 
 
 
-  
 
 
 
@@ -175,5 +202,77 @@ $.ajax({
             });
           }
         });
+        $('.marsDisplay').hide()
+        $('.marsDisplay2').hide()
+        $('.marsDisplay3').hide()
+        $('#searchMars').on('click', function(){
+          $('#nasaTitle').empty();
+          $('#nasaDescription').empty()
+          $('.marsDisplay').fadeIn()
+          $('#nasaTitle2').empty();
+          $('#nasaDescription2').empty()
+          $('.marsDisplay2').fadeIn()
+          $('#nasaTitle3').empty();
+          $('#nasaDescription3').empty()
+          $('.marsDisplay3').fadeIn()
+          var query = $('#form-mars').val()
+          var imgUrl = "https://images-api.nasa.gov/search?q="+query;
+          $.ajax({
+            type: "GET",
+            url: imgUrl,
+            success: function (data) {
+              console.log(data)
+              console.log(data.collection)
+              console.log(data.collection.items[0])
+              $('#nasaTitle').append( data.collection.items[0].data[0].title)
+              $('#nasaDescription').append(data.collection.items[0].data[0].description)
+              $('#nasa_img_id').attr("src", data.collection.items[0].links[0].href)
+              $('#nasaTitle2').append( data.collection.items[1].data[0].title)
+              $('#nasaDescription2').append(data.collection.items[1].data[0].description)
+              $('#nasa_img_id2').attr("src", data.collection.items[1].links[0].href)
+              $('#nasaTitle3').append( data.collection.items[2].data[0].title)
+              $('#nasaDescription3').append(data.collection.items[2].data[0].description)
+              $('#nasa_img_id3').attr("src", data.collection.items[2].links[0].href)
+            }
+            })
+          })
+         
+           $('.marsbtn').on('click', function(){
+              $('#nasaTitle').empty();
+          $('#nasaDescription').empty()
+          $('#nasaTitle2').empty();
+          $('#nasaDescription2').empty()
+          $('#nasaTitle3').empty();
+          $('#nasaDescription3').empty()
+          $('.marsDisplay').fadeIn()
+          $('.marsDisplay2').fadeIn()
+          $('.marsDisplay3').fadeIn()
+          var $this = $(this)
+              var btnquery =$(this).val()
+              console.log(btnquery)
+          var mrsurl = "https://images-api.nasa.gov/search?q="+btnquery;
+          $.ajax({
+            type: "GET",
+            url: mrsurl,
+            success: function (data) {
+              console.log(data)
+              console.log(data.collection)
+              console.log(data.collection.items[0])
+              $('#nasaTitle').append( data.collection.items[0].data[0].title)
+              $('#nasaDescription').append(data.collection.items[0].data[0].description)
+              $('#nasa_img_id').attr("src", data.collection.items[0].links[0].href)
+              $('#nasaTitle2').append( data.collection.items[1].data[0].title)
+              $('#nasaDescription2').append(data.collection.items[1].data[0].description)
+              $('#nasa_img_id2').attr("src", data.collection.items[1].links[0].href)
+              $('#nasaTitle3').append( data.collection.items[2].data[0].title)
+              $('#nasaDescription3').append(data.collection.items[2].data[0].description)
+              $('#nasa_img_id3').attr("src", data.collection.items[2].links[0].href)
+            }
+            })
+            })
+          
+         
+       
+        
       }) // url to look for using the search input by the user'
       
