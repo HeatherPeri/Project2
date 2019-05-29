@@ -30,16 +30,42 @@
 
    <script>
 
-     document.addEventListener('DOMContentLoaded', function() {
-       var calendarEl = document.getElementById('calendar');
 
-       var calendar = new FullCalendar.Calendar(calendarEl, {
-         plugins: [ 'dayGrid', 'interaction', 'bootstrap' ],
-         themeSystem: 'bootstrap'
-       });
-
-       calendar.render();
-     });
+document.addEventListener('DOMContentLoaded', function() {
+      var calendarEl = document.getElementById('calendar');
+    
+      var calendar = new FullCalendar.Calendar(calendarEl, {
+        plugins: [ 'dayGrid', 'bootstrap' ],
+        defaultView: 'dayGridMonth',
+        themeSystem: 'bootstrap'
+        header: {
+          center: 'addEventButton'
+        },
+        customButtons: {
+          addEventButton: {
+            text: 'add event...',
+            click: function() {
+              var dateStr = prompt('Enter a date in YYYY-MM-DD format');
+              var date = new Date(dateStr + 'T00:00:00'); // will be in local time
+    
+              if (!isNaN(date.valueOf())) { // valid?
+                calendar.addEvent({
+                  title: 'New Asteriod Event!',
+                  start: date,
+                  allDay: true
+                });
+                alert('New Asteriod Event Added!'); 
+                // Great. Now, update your database...
+              } else {
+                alert('Invalid date.');
+              }
+            }
+          }
+        }
+      });
+    
+      calendar.render();
+    });
 
    </script>
  </head>
@@ -60,25 +86,9 @@
             <li class="nav-item">
                 <div class="fb-login-button" onclick="loginFB()" data-width="" data-size="medium" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
 
-            </li>
-          </ul>
-         <!-- <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-          </form>
-        </div>-->
-      </nav>
-      <div class="container newcal" style="margin-top: 5%;">
-        <div class="row">
-          <div class="col col-md-7">
-   <div id='calendar' data-size="medium"></div>
-  </div>
-  <div class="col col-md-4">
-   <div id="upEvents">
-<p>Some Text</p>
-</div>
-   </div>
-  </div>
-  </div>
+   <div id='calendar'></div>
+
+
+
  </body>
 </html>
