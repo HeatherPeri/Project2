@@ -101,11 +101,12 @@
     
               if (!isNaN(date.valueOf())) { // valid?
                 calendar.addEvent({
-                  title: 'dynamic event',
+                  title: 'New Asteriod Event!',
                   start: date,
                   allDay: true
                 });
-                alert('Great. Now, update your database...');
+                alert('New Asteriod Event Added!'); 
+                // Great. Now, update your database...
               } else {
                 alert('Invalid date.');
               }
