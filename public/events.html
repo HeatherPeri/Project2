@@ -23,19 +23,7 @@
 
 
 </head>
-   <script>
 
-     document.addEventListener('DOMContentLoaded', function() {
-       var calendarEl = document.getElementById('calendar');
-
-       var calendar = new FullCalendar.Calendar(calendarEl, {
-         plugins: [ 'dayGrid' ]
-       });
-
-       calendar.render();
-     });
-
-   </script>
 
  <body>
     <div id="fb-root"></div>
@@ -67,7 +55,7 @@
                 </div>
               </li>
               <li class="nav-item">
-                  <div class="fb-login-button" onclick="loginFB()" data-width="" data-size="medium" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
+                  <!-- <div class="fb-login-button" onclick="loginFB()" data-width="" data-size="medium" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div> -->
 
               </li>
             </ul>
@@ -81,4 +69,16 @@
    <div id='calendar'></div>
 
  </body>
+   <script>
+     document.addEventListener('DOMContentLoaded', function() {
+       var calendarEl = document.getElementById('calendar');
+
+       var calendar = new FullCalendar.Calendar(calendarEl, {
+         plugins: [ 'dayGrid' ]
+       });
+
+       calendar.render();
+     });
+
+   </script>
 </html>
