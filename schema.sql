@@ -1,5 +1,5 @@
-DROP DATABASE IF EXISTS `facebookdb`;
-CREATE DATABASE `facebookdb`;
+DROP DATABASE IF EXISTS facebookdb;
+CREATE DATABASE facebookdb;
 
 -- DROP DATABASE IF EXISTS testdb;
 -- CREATE DATABASE testdb;
