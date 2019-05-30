@@ -282,9 +282,11 @@ $.ajax({
         stars()
         
       
-
-        function marsRover(){
-          var marsRoverUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'
+      $('.marspics').on('click', function(){
+          var camera = $(this).val()
+          var date = $('#marsInput').val()
+          console.log(date)
+          var marsRoverUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date='+date+'&camera='+camera+'&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'
           $.ajax({
             url:marsRoverUrl,
             success: function(data){
@@ -292,8 +294,9 @@ $.ajax({
               console.log(data.photos[0])
             }
           })
-        }
-       marsRover()
+        
+      })
+      
         //marsRover()
       }) // url to look for using the search input by the user'
       
