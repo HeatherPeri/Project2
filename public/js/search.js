@@ -167,7 +167,7 @@ $.ajax({
 
     //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
     var todayDate = moment().format('YYYY-MM-DD');
-    var endDate = moment().add(0, 'days').format('YYYY-MM-DD'); 
+    var endDate = moment().add(2, 'days').format('YYYY-MM-DD'); 
     console.log(todayDate)
     var searchTerm = $(".form-control").val();// value entered by the user
         //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
