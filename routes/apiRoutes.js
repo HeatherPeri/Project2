@@ -1,27 +1,27 @@
 var db = require("../models");
 
 module.exports = function(app) {
-  // Get all examples
-  app.get("/api/examples", function(req, res) {
-    db.Example.findAll().then(function(dbExamples) {
-      res.json(dbExamples);
+  // Get all wikipedia
+  app.get("/api/wikipedia", function(req, res) {
+    db.Example.findAll().then(function(dbwikipedia) {
+      res.json(dbwikipedia);
     });
   });
 
-  app.get("/api/examples/:id", function(req, res) {
+  app.get("/api/wikipedia/:id", function(req, res) {
     db.Example.findOne({
       where: {
         id: req.params.id
       }
     }).then(
-      function(dbExamples) {
-        res.json(dbExamples);
+      function(dbwikipedia) {
+        res.json(dbwikipedia);
       }
     );
   });
 
   // Create a new example
-  app.post("/api/examples", function(req, res) {
+  app.post("/api/wikipedia", function(req, res) {
     db.Example.create(req.body).then(
       function(dbExample) {
         res.json(dbExample);
@@ -30,7 +30,7 @@ module.exports = function(app) {
   });
 
   // Delete an example by id
-  app.delete("/api/examples/:id", function(req, res) {
+  app.delete("/api/wikipedia/:id", function(req, res) {
     db.Example.destroy({ where: { id: req.params.id } }).then(
       function(dbExample) {
         res.json(dbExample);

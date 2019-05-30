@@ -7,8 +7,8 @@ var $exampleList;
 // Make sure we wait to attach our handlers until the DOM is fully loaded.
 $(function() {
   // Get references to page elements
-  $exampleText = $("#example-text");
-  $exampleDescription = $("#example-description");
+  $exampleText = $("#wikiTitle");
+  $exampleDescription = $("#wikiText");
   $submitBtn = $("#submit");
   $exampleList = $("#example-list");
 
@@ -80,8 +80,8 @@ var handleFormSubmit = function(event) {
   event.preventDefault();
 
   var example = {
-    text: $exampleText.val().trim(),
-    description: $exampleDescription.val().trim()
+    text: $exampleText.val(),
+    description: $exampleDescription.val()
   };
 
   if (!example.text || !example.description) {

@@ -79,11 +79,10 @@ epic()*/
 
 
 
-
-
 function wikiSearchMain(data){
+  
     $('#searchImg').on('click', function(){
-      
+      console.log(data)
         var searchTerm = $(".form-control").val();// value entered by the user
         //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
         var wikiurl = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ searchTerm + "&srsearch=meaning&title&srlimit=1&format=json&callback=?"; // url to look for using the search input by the user
@@ -281,22 +280,39 @@ $.ajax({
         }
         stars()
         
-      
+        $('#roverpic1').hide()
+        $('#roverRow').hide()
+        //$('#rovererr').hide()
       $('.marspics').on('click', function(){
+        $('#roverRow').fadeIn()
+        $('#rovererr').empty()
+        $('#roverpic1').fadeIn()
+        $('.rover1').empty()
           var camera = $(this).val()
           var date = $('#marsInput').val()
           console.log(date)
           var marsRoverUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date='+date+'&camera='+camera+'&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'
           $.ajax({
             url:marsRoverUrl,
-            success: function(data){
+            success: function(data, error){
+              if(data.photos.length == 0){
+                $('#roverpic1').hide()
+                $('#roverRow').hide()
+                $('#rovererr').append('Sorry, no pictures from this camera for this date!')
+              }else{
+                $('#rovererr').empty()
               console.log(data)
-              console.log(data.photos[0])
+              console.log(data.photos[0].camera.full_name)
+              $('#cameraName1').append("Camera Full Name: "+data.photos[0].camera.full_name)
+              $('#landingdate1').append("Landing Date: "+data.photos[0].rover.landing_date)
+              $('#roverStatus1').append("Status: "+ data.photos[0].rover.status)
+              $('#roverpic1').attr('src', data.photos[0].img_src)
+            }
+              
             }
           })
         
       })
-      
-        //marsRover()
+     
       }) // url to look for using the search input by the user'
       

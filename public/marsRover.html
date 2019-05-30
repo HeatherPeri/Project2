@@ -44,15 +44,17 @@
                 </form>
               </div>-->
             </nav>
-       <div class="container marsRoverPhotos" style="margin-top:5%">
-            <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text" id="basic-addon1"><img src="./styles/images2/loupe.png" id="searchImg"></span>
-                    </div>
-                    <input type="text" id="marsInput" class="form-control" placeholder="2019-05-29" aria-label="Username" aria-describedby="basic-addon1">
+       <div class="container marsRoverPhotos" style="margin-top:7%">
+        <h1 style="color:white; font-size:50px;">Curiosity (rover)</h1>
+        <h4 style="color:white; width:600px; font-size: 30px;">Curiosity is a car-sized rover designed to explore the crater Gale on Mars as part of NASA's Mars Science Laboratory mission.</h4>
+        <br>
+        <h4 style="color:white;">Please Enter date and choose camera button to view pictures</h4>
+        <label for="form-control" style="color:white;">Enter Date(YYYY-MM-DD)</label>
+        <div class="input-group mb-3"style="margin:0px;">
+            <input type="text" id="marsInput" class="form-control" placeholder="2019-05-29" aria-label="Username" aria-describedby="basic-addon1">
                   </div>
+                  <h2 style="color:white; text-align:center;">Curiosity Rover Cameras</h2>
                   <div class="group">
-                        
                         <button style="-webkit-animation-delay: .3s;animation-delay: .3s;" class="marspics" value="fhaz">FHAZ</button>
                         <button style="-webkit-animation-delay: .6s;animation-delay: .6s;" class="marspics" value="navcam">NAVCAM</button>
                         <button style="-webkit-animation-delay: .6s;animation-delay: .6s;" class="marspics" value="mast">MAST</button>
@@ -63,6 +65,26 @@
             
                       </div>
 
-       </div>    
+       </div>  
+       <div class="container marsrovpic" style="height: 650px;">
+            <h1 id="rovererr" style="color:white;"></h1>
+      <div class="row" id="roverRow">
+          <div class="col col-md-6" >
+              <h4 class="rover1" id="cameraName1" style = "color:white;"></h4>
+              <h4 class="rover1" id="landingdate1" style="color:white; font-size: 30px;"></h4>
+              <h4 class="rover1" id="roverStatus1" style="color: white; font-size: 30px;"></h4>
+          </div>
+          <div class="col col-md-6">
+              <img  id="roverpic1" width="550px" height="450px">
+              
+             </div>
+             
+      </div>
+
+       </div>
+
+
+
+       </div>  
 </body>
 </html>
