@@ -81,11 +81,9 @@ epic()*/
 
 
 
-
-
-
+function wikiSearchMain(data){
     $('#searchImg').on('click', function(){
-
+      
         var searchTerm = $(".form-control").val();// value entered by the user
         //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
         var wikiurl = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ searchTerm + "&srsearch=meaning&title&srlimit=1&format=json&callback=?"; // url to look for using the search input by the user
@@ -106,14 +104,14 @@ epic()*/
                 for (i = 0; i < data.length; i++){
                   if (i === 1) { break; }
                     //$('.container').append(data[1])
-                    var cat = data[1]
+                    var data1 = data[1]
                     var description = data[2]
                     var link = data[3]
                     
-                      console.log(cat)
-                        console.log(cat[0])
+                      console.log(data1)
+                        console.log(data1[0])
                         console.log(description[0])
-                        $('#wikiTitle').append(cat[0])
+                        $('#wikiTitle').append(data1[0])
                         $('#wikiText').append(description[0])
                         $('#wikiLinks').append('<tr> <td><a href ='+link[0]+'>' + link[0] + '</a></td></tr>')
                         if(description[0] == ""){
@@ -131,13 +129,13 @@ epic()*/
         })
 
     })
+  }
+  wikiSearchMain()
 
 
     //moment().format();
 
    /*var url = "https://api.nasa.gov/planetary/apod?api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN";
-
-
 $.ajax({
   url: url,
   success: function(result){
@@ -271,8 +269,31 @@ $.ajax({
             })
             })
           
-         
-       
+         function stars(){
+          var proxy = 'https://cors-anywhere.herokuapp.com/';
+          var starurl = "https://www.sky-map.org/?img_source=SDSS&object=m100&box_width=10&box_height=10";
+          $.ajax({
+            url: proxy+starurl,
+            success: function (data) {
+              console.log()
+            }
+         })
+        }
+        stars()
         
+      
+
+        function marsRover(){
+          var marsRoverUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date=2015-6-3&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'
+          $.ajax({
+            url:marsRoverUrl,
+            success: function(data){
+              console.log(data)
+              console.log(data.photos[0])
+            }
+          })
+        }
+       marsRover()
+        //marsRover()
       }) // url to look for using the search input by the user'
       
