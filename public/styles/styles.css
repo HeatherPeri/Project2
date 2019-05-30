@@ -8,6 +8,22 @@ body{
     background-size: cover;
     position: relative;
 }
+#roverpic1{
+  margin-top: 3%;
+}
+#cameraName1{
+  color: white;
+    margin-top: 5%;
+    font-size: 40px;
+}
+#roverRow{
+  background: #ffffff69;
+    margin-top: 5%;
+    display: flex;
+    height: 500px;
+    width: 90%;
+    margin-left: 3%;
+}
 #nasa_img_id{
   margin-top: 10px;
 }
@@ -500,6 +516,13 @@ margin-top: 1%;
       background: #03a9f480;
       
 
+    }
+    .marspics{
+      background: #03a9f480;
+    }
+    .marspics:hover{
+      background: #3764c780;
+      box-shadow: 0px 1px 20px 10px #1b11a5;
     }
     .marsbtn:hover{
       background: #3764c780;

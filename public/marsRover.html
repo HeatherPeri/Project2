@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet"  href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+  <link rel="stylesheet" type="text/css" href="./styles/style.css">
+
+  <title>Home Page</title>
+  
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+  <script src="./js/index.js"></script>
+  <script src="./js/animation.js"></script>
+  <script src="./js/search.js"></script>
+</head>
+<body>
+        <div id="fb-root"></div>
+        <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.3&appId=184321282484232&autoLogAppEvents=1"></script>
+        
+          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <img src="./styles/images2/moon-phase.png" id="navImg">
+              <a class="navbar-brand" href="#">ASTRONOMY</a>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+            
+              <div class="navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  
+                  <li class="nav-item">
+                      <div class="fb-login-button" onclick="loginFB()" data-width="" data-size="medium" data-button-type="continue_with" data-auto-logout-link="true" data-use-continue-as="true"></div>
+    
+                  </li>
+                </ul>
+               <!-- <form class="form-inline my-2 my-lg-0">
+                  <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                  <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+              </div>-->
+            </nav>
+       <div class="container marsRoverPhotos" style="margin-top:7%">
+        <h1 style="color:white; font-size:50px;">Curiosity (rover)</h1>
+        <h4 style="color:white; width:600px; font-size: 30px;">Curiosity is a car-sized rover designed to explore the crater Gale on Mars as part of NASA's Mars Science Laboratory mission.</h4>
+        <br>
+        <h4 style="color:white;">Please Enter date and choose camera button to view pictures</h4>
+        <label for="form-control" style="color:white;">Enter Date(YYYY-MM-DD)</label>
+        <div class="input-group mb-3"style="margin:0px;">
+            <input type="text" id="marsInput" class="form-control" placeholder="2019-05-29" aria-label="Username" aria-describedby="basic-addon1">
+                  </div>
+                  <h2 style="color:white; text-align:center;">Curiosity Rover Cameras</h2>
+                  <div class="group">
+                        <button style="-webkit-animation-delay: .3s;animation-delay: .3s;" class="marspics" value="fhaz">FHAZ</button>
+                        <button style="-webkit-animation-delay: .6s;animation-delay: .6s;" class="marspics" value="navcam">NAVCAM</button>
+                        <button style="-webkit-animation-delay: .6s;animation-delay: .6s;" class="marspics" value="mast">MAST</button>
+                        <button style="-webkit-animation-delay: .6s;animation-delay: .6s;" class="marspics" value="chemcam">CHEMCAM</button>
+                        <button style="-webkit-animation-delay: .6s;animation-delay: .6s;" class="marspics" value="mahli">MAHLI</button>
+                        <button style="-webkit-animation-delay: .6s;animation-delay: .6s;" class="marspics" value="mardi">MARDI</button>
+                        <button style="-webkit-animation-delay: .6s;animation-delay: .6s;" class="marspics" value="rhaz">RHAZ</button>
+            
+                      </div>
+
+       </div>  
+       <div class="container marsrovpic" style="height: 650px;">
+            <h1 id="rovererr" style="color:white;"></h1>
+      <div class="row" id="roverRow">
+          <div class="col col-md-6" >
+              <h4 class="rover1" id="cameraName1" style = "color:white;"></h4>
+              <h4 class="rover1" id="landingdate1" style="color:white; font-size: 30px;"></h4>
+              <h4 class="rover1" id="roverStatus1" style="color: white; font-size: 30px;"></h4>
+          </div>
+          <div class="col col-md-6">
+              <img  id="roverpic1" width="550px" height="450px">
+              
+             </div>
+             
+      </div>
+
+       </div>
+
+
+
+       </div>  
+</body>
+</html>
