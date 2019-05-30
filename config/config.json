@@ -1,7 +1,9 @@
 {
   "development": {
     "username": "root",
+
     "password": "",
+
     "database": "astrology_db",
     "host": "localhost",
     "port": 3306,
