@@ -140,25 +140,6 @@
             database.ref().push(newEvent);
 
             alert('New Asteriod Event: ' + eventName + ' Added!');
-
-            database.ref().on("child_added", function (childSnapshot) {
-              console.log(childSnapshot.val());
-              var eventName = childSnapshot.val().eventName;
-              var eventDate = childSnapshot.val().eventDate;
-              var eventTime = childSnapshot.val().eventtime;
-              var eventDescription = childSnapshot.val().eventDescription;
-
-              var date = new Date(eventDate + 'T00:00:00'); // will be in local time
-
-              if (!isNaN(date.valueOf())) { // valid?
-                calendar.addEvent({
-                  title: eventName,
-                  start: date,
-                  allDay: true
-                });
-              }
-            }
-            )
           }
         }
       }
