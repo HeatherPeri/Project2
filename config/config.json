@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
 
-    "password": "UNCbootcamp2019=",
+    "password": "",
 
     "database": "astrology_db",
     "host": "localhost",
