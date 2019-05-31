@@ -82,6 +82,7 @@ epic()*/
 function wikiSearchMain(data){
   
     $('#searchImg').on('click', function(){
+      event.preventDefault()
       console.log(data)
         var searchTerm = $(".form-control").val();// value entered by the user
         //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'

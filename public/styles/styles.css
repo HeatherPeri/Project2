@@ -1,12 +1,12 @@
 
 body{
-  background-image: url('./images2/photo-1421930535025-d2af27c14065.jpeg');
+  /*background-image: url('./images2/photo-1421930535025-d2af27c14065.jpeg');
   height: 700px;
   background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
+    position: relative;*/
 }
 #roverpic1{
   margin-top: 3%;
@@ -146,6 +146,9 @@ a:hover{
     margin-bottom: 20px;
     font-size: 25px;
 }
+#wikiTitle{
+  margin-top: 3%;
+}
 .input-group{
   margin-top: 5%;
 }
@@ -154,22 +157,41 @@ a:hover{
 }
 #searchImg{
   width: 50px;
+  -webkit-animation:none;
+  color: black;
+    border: 1px black solid;
+    box-shadow: 2px 2px #171515;
+
 }
-#home{
+
+#searchImg:hover{
+  color:black;
+  border: 1px black solid;
+  background: white;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+#searchwiki{
+  border: 1px black solid;
+  height: 40px;
+  margin-top: 4px;
+}
+/*#home{
   
  background:url(http://pixelglimpse.designova.net/wp_redrice/images/hero.png);
   animation:animateBackground 120s infinite;
   -webkit-animation:animateBackground 120s infinite;
-}
+}*/
 #navImg{
   width: 80px;
     margin-right: 30px;
 }
-.bg1{
+/*.bg1{
  
   height: 100%;
   background-image:-webkit-linear-gradient(left bottom, rgba(30, 31, 58, 0.8),rgba(12, 23, 97, 0.8));
-}
+}*/
 article{
   color:#fff;
   font-family:Arial;
@@ -187,6 +209,8 @@ article{
     width: 100%;
     background: #fefdffad;
     z-index: 2;
+    box-shadow: 6px 7px 20px 0px #080707;
+
 
 }
 .navbar-brand{
@@ -198,9 +222,9 @@ article{
   color: black;
   border: 1px black solid;
   font-size: 60px;
-  text-align: right;
+  
   height: 100px;
-  text-shadow: 3px 1px 8px #080707;
+  text-shadow: 3px 1px 0px #bfb6b6;
 }
 #epicImg{
   width: 90px;
@@ -215,13 +239,23 @@ article{
     font-size: 60px;
     text-align: right;
     height: 100px;
-    text-shadow: 3px 1px 8px #080707;
+    text-shadow: 3px 1px 0px #bfb6b6;
 
 }
 #astImg{
   width: 90px;
   margin-left: 20px;
   margin-right: 40px;
+}
+#starmap{
+  width: 100%;
+    background: #ffffff9c;
+    color: black;
+    border: 1px black solid;
+    font-size: 60px;
+    text-align: right;
+    height: 100px;
+    text-shadow: 3px 1px 0px #bfb6b6;
 }
 #events{
   width: 100%;
@@ -231,7 +265,17 @@ article{
     font-size: 60px;
     text-align: left;
     height: 100px;
-    text-shadow: 3px 1px 8px #080707;
+    text-shadow: 3px 1px 0px #bfb6b6;
+}
+#nasacollection{
+  width: 100%;
+    background: #ffffff9c;
+    color: black;
+    border: 1px black solid;
+    font-size: 60px;
+    text-align: right;
+    height: 100px;
+    text-shadow: 3px 1px 0px #bfb6b6;
 }
 #eventsImg{
   width: 90px;
@@ -379,12 +423,12 @@ a {
 .imgoftheday{
   color: white;
   width: 100%;
-    margin-top: 10%;
+    margin-top: 6%;
     height: 400px;
 }
 .imgcol{
   float: left;
-margin-top: 1%;
+  margin-top: -5%;
 }
 .colexpl{
   margin: 0px;
@@ -394,26 +438,55 @@ margin-top: 1%;
   
     font-size: 22px;
     margin-top: 1%;
+    text-shadow: 4px 2px 0px #545151;
+  
 }
 #apod_title{
   
   font-size: 40px;
   margin-bottom: 0px;
+  text-shadow: 4px 2px 0px #545151;
+
 }
 #imgofthedayTitle{
   text-align: center;
     font-size: 60px;
     margin-left: 10px;
+    text-shadow: 4px 2px 0px #545151;
+  
     
 }
-.imgofthedaybackground{
+#accordion{
+  position: relative;
+  box-shadow: inset -11px -15px 15px 20px #171313;
+
+  
+}
+.panel-title{
+  background: #ffffff85;
+    text-align: center;
+    cursor: pointer;
+    font-size: 30px;
+}
+.background{
   background: #fdfdfd8c;
   margin-top: 5%;
     margin-bottom: 5%;
+    position: relative;
 }
 #apod_img_id{
   box-shadow: -2px 0px 14px 3px #888888;
   margin-top: 21%;
+  box-shadow: 6px 4px 19px 3px #000000;
+
+
+}
+.imgofthedaybackground {
+  background: #fdfdfd8c;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  position: relative;
+  box-shadow: 9px 9px 18px 2px #140f0f;
 
 }
 .panel-title{
@@ -452,7 +525,8 @@ margin-top: 1%;
 		}
 		.group button{
 			margin-top: 10px;
-		}
+    }
+    
 		button{
 /*			box-sizing: border-box;*/
 			background: NONE;
@@ -470,7 +544,8 @@ margin-top: 1%;
 		
 			animation: pulse 1s linear infinite alternate;
 			-webkit-animation: pulse 1s linear infinite alternate;
-		}
+    }
+    
 		.active,
 		button:active{
 			background-image: linear-gradient(rgba(0,0,0,.1) 13%, transparent 13%,transparent);
@@ -544,4 +619,84 @@ margin-top: 1%;
       color: white;
     text-align: center;
     font-size: 60px;
+    }
+    /*BACKGROUND*/
+    body{
+ 
+      background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    #home{
+  
+      background:url(http://pixelglimpse.designova.net/wp_redrice/images/hero.png);
+       animation:animateBackground 120s infinite;
+       -webkit-animation:animateBackground 120s infinite;
+     }
+     
+     .bg1{
+      
+       display:-webkit-flex;
+       
+       width: 100vw;
+       height: 100vh;
+       background-image:-webkit-linear-gradient(left bottom, rgba(30, 31, 58, 0.8),rgba(12, 23, 97, 0.8));
+     }
+
+     /*///////////////////////////////////////////////////////////////*/
+     html,
+     body {
+       height: 100%;
+       min-width: 100%;
+       padding: 0;
+       margin: 0;
+       
+     }
+     
+     #canvas {
+      position: fixed;
+       width: 100%;
+       height: 100%;
+       background: #FEAC5E;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #4BC0C8, #C779D0, #FEAC5E);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #000000, #080807, #80762d);    
+       /*background-color: #6B202A;*/
+     }
+
+
+
+
+     .background{
+      position: fixed;
+      width:100%;
+      height:100%;
+      background:url(https://lh4.googleusercontent.com/proxy/gdKMsKqzMFQ1xEVJf9lNNfL7pw_HG3DaHZij1yJPHGPLQYzY_FXqVrSsC0Q2VK49HPML25NGCls545UIGYmTs6y11TAXtLcKAv_HmKA=w3840-h2160-p-k-no-nd-mv);
+      background-position:center center;
+      background-size:cover;
+      animation: zoom 100s infinite alternate;
+      animation-timing-function: linear;
+    /* 	filter: blur(2px); */
+    }
+    
+    #app{
+      z-index: 10;
+      width:250px;
+      height:250px;
+      margin: auto;
+      /*box-shadow: 10px 10px 50px rgba(0,0,0,0.25);
+      // filter: blur(10px);*/
+    /* 	background:rgba(255,255,255,0.5); */
+      border-radius: 8px;
+      position:fixed;
+    }
+    
+    @keyframes zoom {
+      from {
+      transform:scale(1.01)
+      }
+    
+      to {
+      transform:scale(1.50)
+      }
     }
