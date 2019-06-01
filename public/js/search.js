@@ -3,11 +3,13 @@ $(document).ready(function(){
   
   
     var date = $('#form-mars').val()
-    var marsurl = 'https://api.open-notify.org/astros.json';
+    var proxy = 'https://cors-anywhere.herokuapp.com/'
+    var marsurl = 'http://api.open-notify.org/astros.json';
     $.ajax({
       type:"GET",
-      url:marsurl,
+      url:proxy+marsurl,
       success: function(data){
+        console.log(url)
         console.log(data)
         console.log(data.photos)
         var newData = data.people
@@ -270,12 +272,13 @@ $.ajax({
             })
           
          function stars(){
-          var proxy = 'https://cors-anywhere.herokuapp.com/';
+          //var proxy = 'https://cors-anywhere.herokuapp.com/';
           var starurl = "https://www.sky-map.org/?img_source=SDSS&object=m100&box_width=10&box_height=10";
           $.ajax({
-            url: starurl,
+            url:proxy+starurl,
             success: function (data) {
-              console.log()
+              console.log(data)
+              console.log(url)
             }
          })
         }
