@@ -87,6 +87,12 @@ function wikiSearchMain(data){
       event.preventDefault()
       console.log(data)
         var searchTerm = $(".form-control").val();// value entered by the user
+
+        $.ajax("/api/wikipedia/", {
+          type: "POST",
+          data: { search_query: searchTerm }
+        });
+
         //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
         var wikiurl = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ searchTerm + "&srsearch=meaning&title&srlimit=1&format=json&callback=?"; // url to look for using the search input by the user
         //var wikiurl = 'https://genelab-data.ndc.nasa.gov/genelab/data/search?term='+searchTerm+ '&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'; // url to look for using the search input by the user
@@ -116,9 +122,19 @@ function wikiSearchMain(data){
                         $('#wikiTitle').append(data1[0])
                         $('#wikiText').append(description[0])
                         $('#wikiLinks').append('<tr> <td><a href ='+link[0]+'>' + link[0] + '</a></td></tr>')
+                        
                         if(description[0] == ""){
                           $('#wikiText').append(description[1])
-                        };
+                          $.ajax("/api/wikipedia/", {
+                            type: "POST",
+                            data: { search_query: searchTerm, description: description[1], title: "description[1]"},
+                          });
+                        }else {
+                          $.ajax("/api/wikipedia/", {
+                            type: "POST",
+                            data: { search_query: searchTerm, description: description[0], title: "description[0]"},
+                          });
+                        }
                         
                     
                 }
