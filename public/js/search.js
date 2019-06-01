@@ -3,10 +3,11 @@ $(document).ready(function(){
   
   
     var date = $('#form-mars').val()
-    var marsurl = 'https://api.open-notify.org/astros.json';
+    var proxy = 'https://cors-anywhere.herokuapp.com/'
+    var marsurl = 'http://api.open-notify.org/astros.json';
     $.ajax({
       type:"GET",
-      url:marsurl,
+      url:proxy+marsurl,
       success: function(data){
         console.log(data)
         console.log(data.photos)
