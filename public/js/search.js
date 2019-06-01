@@ -274,9 +274,10 @@ $.ajax({
           var proxy = 'https://cors-anywhere.herokuapp.com/';
           var starurl = "https://www.sky-map.org/?img_source=SDSS&object=m100&box_width=10&box_height=10";
           $.ajax({
-            url: starurl,
+            url:proxy+starurl,
             success: function (data) {
-              console.log()
+              console.log(data)
+              console.log(url)
             }
          })
         }
