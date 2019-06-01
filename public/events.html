@@ -65,9 +65,16 @@
       <div class="col-md-6">
         <div id='calendar'></div>
       </div>
-      <div class="col-md-1">
+      <div class="col-md-2">
+        <br></br>
+        <br></br>
+        <h1 style="color: white;">Event information</h1>
+        <input class=eventName placeholder="Event Name"></input>
+        <input class=eventTime placeholder="Event Time"></input>
+        <input class=eventDate placeholder="Event Date YYYY-MM-DD"></input>
+        <input class=eventDescription placeholder="Event Description"></input>
       </div>
-      <div class="col-md-5">
+      <div class="col-md-4">
         <br></br>
 
         <article class="block2">
@@ -126,10 +133,10 @@
         addEventButton: {
           text: 'add event...',
           click: function () {
-            eventDate = prompt('Enter a date in YYYY-MM-DD format');
-            eventName = prompt('What is the name of your event?');
-            eventTime = prompt('What is time is your event?');
-            eventDescription = prompt('Please provide a description of the event');
+            eventDate = $(".eventDate").val();
+            eventName = $(".eventName").val();
+            eventTime = $(".eventTime").val();
+            eventDescription = $(".eventDescription").val();
 
             var newEvent = {
               eventName: eventName,
@@ -140,6 +147,10 @@
             database.ref().push(newEvent);
 
             alert('New Asteriod Event: ' + eventName + ' Added!');
+            $(".eventDate").val("");
+            $(".eventName").val("");
+            $(".eventTime").val("");
+            $(".eventDescription").val("");
           }
         }
       }
