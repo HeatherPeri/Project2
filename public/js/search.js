@@ -9,6 +9,7 @@ $(document).ready(function(){
       type:"GET",
       url:proxy+marsurl,
       success: function(data){
+        console.log(url)
         console.log(data)
         console.log(data.photos)
         var newData = data.people
@@ -271,7 +272,7 @@ $.ajax({
             })
           
          function stars(){
-          var proxy = 'https://cors-anywhere.herokuapp.com/';
+          //var proxy = 'https://cors-anywhere.herokuapp.com/';
           var starurl = "https://www.sky-map.org/?img_source=SDSS&object=m100&box_width=10&box_height=10";
           $.ajax({
             url:proxy+starurl,
