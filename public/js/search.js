@@ -3,7 +3,7 @@ $(document).ready(function(){
   
   
     var date = $('#form-mars').val()
-    var marsurl = 'http://api.open-notify.org/astros.json';
+    var marsurl = 'https://api.open-notify.org/astros.json';
     $.ajax({
       type:"GET",
       url:marsurl,
