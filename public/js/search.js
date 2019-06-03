@@ -116,9 +116,19 @@ function wikiSearchMain(data){
                         $('#wikiTitle').append(data1[0])
                         $('#wikiText').append(description[0])
                         $('#wikiLinks').append('<tr> <td><a href ='+link[0]+'>' + link[0] + '</a></td></tr>')
+                        
                         if(description[0] == ""){
                           $('#wikiText').append(description[1])
-                        };
+                          $.ajax("/api/wikipedia/", {
+                            type: "POST",
+                            data: { search_query: searchTerm, description: description[1], title: "description[1]"},
+                          });
+                        }else {
+                          $.ajax("/api/wikipedia/", {
+                            type: "POST",
+                            data: { search_query: searchTerm, description: description[0], title: "description[0]"},
+                          });
+                        }
                         
                     
                 }
