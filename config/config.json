@@ -2,7 +2,7 @@
   "development": {
     "username": "root",
     "password": "Ghzlata44",
-    "database": "sequelize_facebook",
+    "database": "astrology_db",
     "host": "localhost",
     "port": 3306,
     "dialect": "mysql"

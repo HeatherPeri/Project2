@@ -20,6 +20,7 @@ body{
     font-size: 40px;
 }
 #roverRow{
+  box-shadow: 5px 3px 13px #0c0a0a;
   background: #ffffff69;
     margin-top: 5%;
     display: flex;
@@ -75,13 +76,25 @@ a:hover{
   cursor: pointer;
 }
 #calendar{
-  width: 900px;
+  width: 1300px;
     margin-top: 10%;
     background: #ffffff7d;
     margin-left: 3%;
 }
 #newcalBody{
   height: 900px;
+}
+#nasaDescription{
+  font-size: 25px;
+}
+.asteroidsHtml{
+  height: 1300px;
+}
+.block2{
+  margin-top:12%;
+}
+#secondP{
+  font-size: 25px;
 }
 
 #searchMars{
@@ -431,7 +444,6 @@ a {
 .imgoftheday{
   color: white;
   width: 100%;
-    margin-top: 6%;
     height: 400px;
 }
 .imgcol{
@@ -444,7 +456,7 @@ a {
 }
 #apod_explaination{
   
-    font-size: 22px;
+    font-size: 25px;
     margin-top: 1%;
     text-shadow: 4px 2px 0px #545151;
   
@@ -494,6 +506,7 @@ a {
   margin-top: 5%;
   margin-bottom: 5%;
   position: relative;
+  height: 550px;
   box-shadow: 9px 9px 18px 2px #140f0f;
 
 }
@@ -828,6 +841,12 @@ width: 40px
     font-size: 15px;
   }
 } 
+.responsive-img{
+  box-shadow: 5px 3px 13px #0c0a0a;
+}
+#roverpic1{
+  box-shadow: 5px 3px 13px #0c0a0a;
+}
 
 /* Small devices (portrait tablets and large phones, 600px and up) */
 @media only screen and (min-width: 600px) {
@@ -841,10 +860,64 @@ width: 40px
 
 /* Large devices (laptops/desktops, 992px and up) */
 @media only screen and (min-width: 992px) {
-
+  .marspics{
+    width: 210px;
+    height: 70px;
+    margin-top: 10px;
+  }
+  .col-lg-3{
+    -webkit-box-flex: none;
+    -ms-flex: none;
+    flex: none;
+    max-width: 16.666667%;
+    /* padding: 0px; */
+    width: 270px;
+  }
 } 
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
 
 }
+@media only screen and (min-width: 1400px){
+  .col-lg-3{
+    -webkit-box-flex: none;
+    -ms-flex: none;
+    flex: none;
+    max-width: 16.666667%;
+    /* padding: 0px; */
+    width: 270px;
+  }
+  .marspics{
+    width: 210px;
+    height: 70px;
+    margin-top: 10px;
+  }
+  .responsive-img{
+      
+  }
+  }
+  @media only screen and (min-width: 1600px){
+    .col-lg-3{
+      -webkit-box-flex: none;
+      -ms-flex: none;
+      flex: none;
+      max-width: 16.666667%;
+      /* padding: 0px; */
+      width: 270px;
+    }
+    .responsive-img{
+
+    }
+  }
+  .navbar{
+    height: 112px
+  }
+  .responsive-img{
+    margin-bottom: 3%;
+  }
+  .marspics{
+    width: 240px;
+    height: 70px;
+  }
+
