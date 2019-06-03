@@ -65,16 +65,10 @@
       <div class="col-md-6">
         <div id='calendar'></div>
       </div>
-      <div class="col-md-2">
-        <br></br>
-        <br></br>
-        <h1 style="color: white;">Event information</h1>
-        <input class=eventName placeholder="Event Name"></input>
-        <input class=eventTime placeholder="Event Time"></input>
-        <input class=eventDate placeholder="Event Date YYYY-MM-DD"></input>
-        <input class=eventDescription placeholder="Event Description"></input>
+      <div class="col-md-1">
+       
       </div>
-      <div class="col-md-4">
+      <div class="col-md-5">
         <br></br>
 
         <article class="block2">
@@ -92,6 +86,7 @@
         </article>
       </div>
     </div>
+    <div id="modal"></div>
   </div>
 </body>
 
@@ -127,34 +122,23 @@
       plugins: ['dayGrid'],
       defaultView: 'dayGridMonth',
       header: {
-        center: 'addEventButton'
+        center: 'savebutton'
       },
       customButtons: {
-        addEventButton: {
+        savebutton: {
           text: 'add event...',
           click: function () {
-            eventDate = $(".eventDate").val();
-            eventName = $(".eventName").val();
-            eventTime = $(".eventTime").val();
-            eventDescription = $(".eventDescription").val();
-
-            var newEvent = {
-              eventName: eventName,
-              eventDate: eventDate,
-              eventTime: eventTime,
-              eventDescription: eventDescription
-            };
-            database.ref().push(newEvent);
-
-            alert('New Asteriod Event: ' + eventName + ' Added!');
-            $(".eventDate").val("");
-            $(".eventName").val("");
-            $(".eventTime").val("");
-            $(".eventDescription").val("");
+            $('#modal').append('<div class="modal" tabindex="-1" role="dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Add Your Event</h5></div><div class="modal-body"><p>Event Name: </p><input class=eventName placeholder=" Enter Event Name"></input><p>Event Time: </p><input class=eventTime placeholder="HH:MM"></input><p>Event Date: </p><input class=eventDate placeholder="YYYY-MM-DD"></input><p>Event Description: </p><input class=eventDescription placeholder="Enter Event Description"></input><div class="modal-footer"><button type="button" class="btn" id="closebtn" onclick="removeModal()" >Close</button><button type="button" id="savebtnmodal" class="btn btn-primary" onclick="some()">Save changes</button></div></div></div></div>')
+           
           }
         }
       }
+      
+
     });
+   
+    
+
     database.ref().on("child_added", function (childSnapshot) {
               console.log(childSnapshot.val());
               var eventName = childSnapshot.val().eventName;
@@ -176,9 +160,45 @@
 
     calendar.render();
 
-  }
+  },
+  
 
   );
+  function removeModal(){
+      var mod = $('.modal')
+      mod.remove()
+    }
+  function some(){
+    eventDate = $(".eventDate").val();
+            eventName = $(".eventName").val();
+            eventTime = $(".eventTime").val();
+            eventDescription = $(".eventDescription").val();
+            var modal = $('.modal')
+            modal.remove()
+           
+           var newEvent = {
+              eventName: eventName,
+              eventDate: eventDate,
+              eventTime: eventTime,
+              eventDescription: eventDescription
+              
+
+            };
+          
+            database.ref().push(newEvent);
+          //alert('New Asteriod Event: ' + eventName + ' Added!');
+         
+            $(".eventDate").val("");
+            $(".eventName").val("");
+            $(".eventTime").val("");
+            $(".eventDescription").val("");
+            //console.log(hello)
+          
+            //document.querySelector('.modal').css.display ='none';
+  }
+  
+  
+ 
 </script>
 
 </html>

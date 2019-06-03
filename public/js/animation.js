@@ -191,7 +191,12 @@ $(function() {
       requestAnimationFrame(animate);
     })();
   })();
-
+  
+  //$('#closebtn').on('click', function(){
+    //event.preventDefault()
+    //$('.modal').remove()
+    
+  //})
  // $('body').append('<a href="#" class="hero-btn"> SEE<br>THE<br><span class="str">STARS</span></a>  <h2 id="introText">Take a journey with us into the sky!</h2> <div class="bg"></div><a id="profile-hook" href="https://codepen.io/johnchinjew"><span>Made by </span><img id="intro_img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/256705/profile/profile-80_73.jpg"></a>')
   //$('#home').hide()
   $('#wikiSearchDisplay').hide()
@@ -221,6 +226,12 @@ $(function() {
   $('#searchImg').on('click', function(){
     $('#wikiSearchDisplay').fadeIn()
   })
+
+  /*$('.addEventButton').on('click', function(){
+     $('.asteroidsHtml').append('<div class="modal" tabindex="-1" role="dialog"><div class="modal-content"><div class="modal-header"><h5 class="modal-title">Modal title</h5><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button></div><div class="modal-body"><p>Modal body text goes here.</p></div></div></div>')
+
+
+  })*/
   })
   /*<a href="#" class="hero-btn">
         SEE<br>THE<br><span class="str">STARS</span>
