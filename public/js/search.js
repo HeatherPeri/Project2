@@ -304,6 +304,9 @@ $.ajax({
         $('.rover1').empty()
           var camera = $(this).val()
           var date = $('#marsInput').val()
+          if (date === ""){
+            date = "2017-02-15"
+          }
           console.log(date)
           var marsRoverUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date='+date+'&camera='+camera+'&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'
           $.ajax({
