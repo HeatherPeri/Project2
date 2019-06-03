@@ -5,7 +5,7 @@ var db = require("./models");
 //var nasa = require('../Project2/node-nasa/lib/nasa.js');
 
 var app = express();
-var PORT = process.env.PORT || 3000 ;
+var PORT =  process.env.PORT || 3000 ;
 
 // Middleware
 app.use(express.static(__dirname + "/public"))
