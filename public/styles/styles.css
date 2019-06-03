@@ -231,6 +231,11 @@ article{
 }
 .navbar-brand{
   font-size: 50px;
+  font-family: 'Righteous', cursive;
+}
+#rovererr{
+  text-align: center;
+  font-family: 'Righteous', cursive;
 }
 #nasaepic{
   width: 100%;
@@ -498,7 +503,7 @@ a {
   box-shadow: -2px 0px 14px 3px #888888;
   margin-top: 21%;
   box-shadow: 6px 4px 19px 3px #000000;
-
+ margin-left: 60px;
 
 }
 .imgofthedaybackground {
@@ -516,6 +521,7 @@ a {
   cursor: pointer;
 }
 .panel-body{
+  font-size: 25px;
   background-color: #ffffff85;
   text-align: center;
 }
@@ -768,6 +774,9 @@ a {
     /*MEDIA QUERIES*/
     /* Extra small devices (phones, 600px and down) */
 @media only screen and (max-width: 600px) {
+  .panel-title{
+    font-size: 20px;
+  }
   #events{
     font-size: 30px;
     height: 50px;
@@ -877,7 +886,17 @@ width: 40px
 
 /* Extra large devices (large laptops and desktops, 1200px and up) */
 @media only screen and (min-width: 1200px) {
-
+  #apod_explaination {
+    font-size: 20px;
+    margin-top: 1%;
+    text-shadow: 4px 2px 0px #545151;
+}
+#imgofthedayTitle {
+  font-size: 40px;
+}
+#apod_title{
+  font-size: 30px;
+}
 }
 @media only screen and (min-width: 1400px){
   .col-lg-3{
