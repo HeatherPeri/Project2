@@ -8,9 +8,8 @@ body{
     background-size: cover;
     position: relative;*/
 }
-
-.bkgrd{
-  width: 100vw;
+.modal{
+  display: block;
 }
 #roverpic1{
   margin-top: 3%;
@@ -229,6 +228,11 @@ article{
   
   height: 100px;
   text-shadow: 3px 1px 0px #bfb6b6;
+}
+#epicroverImg{
+  width: 90px;
+  margin-left: 20px;
+  margin-right: 40px;
 }
 #epicImg{
   width: 90px;
@@ -549,7 +553,18 @@ a {
 			animation: pulse 1s linear infinite alternate;
 			-webkit-animation: pulse 1s linear infinite alternate;
     }
-    
+    .fc-today-button{
+      -webkit-animation:none;
+    }
+    .fc-prev-button{
+      -webkit-animation:none;
+    }
+    .fc-addEventButton-button{
+      -webkit-animation:none;
+    }
+    .fc-next-button{
+      -webkit-animation:none;
+    }
 		.active,
 		button:active{
 			background-image: linear-gradient(rgba(0,0,0,.1) 13%, transparent 13%,transparent);
@@ -704,30 +719,132 @@ a {
       transform:scale(1.50)
       }
     }
-    @media (min-width: 768px){
-      .seven-cols .col-md-1,
-      .seven-cols .col-sm-1,
-      .seven-cols .col-lg-1  {
-        width: 100%;
-        *width: 100%;
-      }
-     }
-     
-     
-     @media (min-width: 992px) {
-      .seven-cols .col-md-1,
-      .seven-cols .col-sm-1,
-      .seven-cols .col-lg-1 {
-        width: 14.285714285714285714285714285714%;
-        *width: 14.285714285714285714285714285714%;
-      }
-     }
-     
-     
-     @media (min-width: 1200px) {
-      .seven-cols .col-md-1,
-      .seven-cols .col-sm-1,
-      .seven-cols .col-lg-1 {
-        width: 14.285714285714285714285714285714%;
-        *width: 14.285714285714285714285714285714%;
-      }
+    .modal button{
+      -webkit-animation: none;
+    }
+    .fc-savebutton-button{
+      -webkit-animation: none;
+    }
+    .modal input{
+      height: 40px;
+      border: 1px black solid;
+    }
+    .modal p{
+      margin-top: 0;
+    /* margin-bottom: 1rem; */
+    height: 1px;
+    }
+    .modal-content{
+      width: 700px;
+      height: 600px;
+      /* margin: 0px; */
+      float: left;
+      margin-left: 30%;
+      margin-top: 10%;
+      border: 1px black solid;
+    }
+    #savebtnmodal{
+      background: #8080808f;
+    }
+    .btn-secondary{
+      background: #8080808f;
+    }
+    .modal-body{
+      display: grid;
+    }
+    /*MEDIA QUERIES*/
+    /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  #events{
+    font-size: 30px;
+    height: 50px;
+  }
+  #nasacollection{
+    font-size: 30px;
+    height: 50px;
+  }
+  #epicroverImg{
+    width: 50px;
+    margin: 0px;
+  }
+  #nasaepic{
+    font-size: 23px;
+    height: 50px;
+  }
+  #starmap{
+    font-size: 30px;
+    height: 50px;
+  }
+  #eventsImg{
+width: 40px
+  }
+  #epicImg{
+    width: 40px;
+    margin: 0px;
+  }
+  #wikiTitle{
+    font-size: 30px;
+  }
+  #wikiText{
+    font-size: 15px;
+  }
+  #navbarSupportedContent{
+    background: white;
+    border: 1px black solid;
+  }
+  .navbar{
+    width: 100%;
+    height: 70px;
+  }
+  .navbar-brand{
+    font-size: 25px;
+    /* margin-right: 23%; */
+    margin-bottom: 4%;
+  }
+  #apod_img_id{
+    width: 280px;
+    height: 200px;
+    margin-top: -5%;
+    margin-bottom: 7%;
+  }
+  #navImg{
+    width: 60px;
+    margin-top: -2%;
+    margin-right: 0px;
+  }
+  .imgoftheday{
+
+  }
+  .imgofthedaybackground{
+
+  }
+  #imgofthedayTitle{
+    font-size: 30px;
+  }
+  #apod_title{
+    font-size: 25px;
+  }
+  #apod_explaination{
+    font-size: 15px;
+  }
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
