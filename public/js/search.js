@@ -3,11 +3,13 @@ $(document).ready(function(){
   
   
     var date = $('#form-mars').val()
+    var proxy = 'https://cors-anywhere.herokuapp.com/'
     var marsurl = 'http://api.open-notify.org/astros.json';
     $.ajax({
       type:"GET",
-      url:marsurl,
+      url:proxy+marsurl,
       success: function(data){
+        console.log(url)
         console.log(data)
         console.log(data.photos)
         var newData = data.people
@@ -79,13 +81,11 @@ epic()*/
 
 
 
-
-
-
-
-
+function wikiSearchMain(data){
+  
     $('#searchImg').on('click', function(){
-
+      event.preventDefault()
+      console.log(data)
         var searchTerm = $(".form-control").val();// value entered by the user
         //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
         var wikiurl = "https://en.wikipedia.org/w/api.php?action=opensearch&search="+ searchTerm + "&srsearch=meaning&title&srlimit=1&format=json&callback=?"; // url to look for using the search input by the user
@@ -106,19 +106,29 @@ epic()*/
                 for (i = 0; i < data.length; i++){
                   if (i === 1) { break; }
                     //$('.container').append(data[1])
-                    var cat = data[1]
+                    var data1 = data[1]
                     var description = data[2]
                     var link = data[3]
                     
-                      console.log(cat)
-                        console.log(cat[0])
+                      console.log(data1)
+                        console.log(data1[0])
                         console.log(description[0])
-                        $('#wikiTitle').append(cat[0])
+                        $('#wikiTitle').append(data1[0])
                         $('#wikiText').append(description[0])
                         $('#wikiLinks').append('<tr> <td><a href ='+link[0]+'>' + link[0] + '</a></td></tr>')
+                        
                         if(description[0] == ""){
                           $('#wikiText').append(description[1])
-                        };
+                          $.ajax("/api/wikipedia/", {
+                            type: "POST",
+                            data: { search_query: searchTerm, description: description[1], title: "description[1]"},
+                          });
+                        }else {
+                          $.ajax("/api/wikipedia/", {
+                            type: "POST",
+                            data: { search_query: searchTerm, description: description[0], title: "description[0]"},
+                          });
+                        }
                         
                     
                 }
@@ -131,13 +141,13 @@ epic()*/
         })
 
     })
+  }
+  wikiSearchMain()
 
 
     //moment().format();
 
    /*var url = "https://api.nasa.gov/planetary/apod?api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN";
-
-
 $.ajax({
   url: url,
   success: function(result){
@@ -167,7 +177,7 @@ $.ajax({
 
     //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
     var todayDate = moment().format('YYYY-MM-DD');
-    var endDate = moment().add(0, 'days').format('YYYY-MM-DD'); 
+    var endDate = moment().add(2, 'days').format('YYYY-MM-DD'); 
     console.log(todayDate)
     var searchTerm = $(".form-control").val();// value entered by the user
         //var newUrl = 'https://api.php?action=query&list=search'+searchTerm+'&srsearch=meaning'
@@ -271,8 +281,55 @@ $.ajax({
             })
             })
           
-         
-       
+         function stars(){
+          //var proxy = 'https://cors-anywhere.herokuapp.com/';
+          var starurl = "https://www.sky-map.org/?img_source=SDSS&object=m100&box_width=10&box_height=10";
+          $.ajax({
+            url:proxy+starurl,
+            success: function (data) {
+              console.log(data)
+              console.log(url)
+            }
+         })
+        }
+        stars()
         
+        $('#roverpic1').hide()
+        $('#roverRow').hide()
+        //$('#rovererr').hide()
+      $('.marspics').on('click', function(){
+        $('#roverRow').fadeIn()
+        $('#rovererr').empty()
+        $('#roverpic1').fadeIn()
+        $('.rover1').empty()
+          var camera = $(this).val()
+          var date = $('#marsInput').val()
+          if (date === ""){
+            date = "2017-02-15"
+          }
+          console.log(date)
+          var marsRoverUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/curiosity/photos?earth_date='+date+'&camera='+camera+'&api_key=DGayCeCopIiwsgjpM1jghFg2fFfzzpeXQZiI18IN'
+          $.ajax({
+            url:marsRoverUrl,
+            success: function(data, error){
+              if(data.photos.length == 0){
+                $('#roverpic1').hide()
+                $('#roverRow').hide()
+                $('#rovererr').append('Sorry, no pictures from this camera for this date!')
+              }else{
+                $('#rovererr').empty()
+              console.log(data)
+              console.log(data.photos[0].camera.full_name)
+              $('#cameraName1').append("Camera Full Name: "+data.photos[0].camera.full_name)
+              $('#landingdate1').append("Landing Date: "+data.photos[0].rover.landing_date)
+              $('#roverStatus1').append("Status: "+ data.photos[0].rover.status)
+              $('#roverpic1').attr('src', data.photos[0].img_src)
+            }
+              
+            }
+          })
+        
+      })
+     
       }) // url to look for using the search input by the user'
       
